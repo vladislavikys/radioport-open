@@ -29,6 +29,25 @@ META = f"""<meta name="description" content="{DESCRIPTION}">
 <meta name="twitter:card" content="summary_large_image">
 """
 
+SETUP_URL = REPO_URL + "#build-from-your-game"
+INTRO = f"""<a class="demo-gh" href="{SETUP_URL}" target="_blank" rel="noopener">FULL VERSION SETUP ↗</a>
+<div class="demo-intro" id="demo-intro" role="dialog" aria-labelledby="demo-title">
+  <div class="demo-card">
+    <div class="demo-kicker">DEMO MODE</div>
+    <h2 id="demo-title">This is a preview of the interface</h2>
+    <p>The music and menu sounds here are <b>synthesized placeholders</b> made for this demo. None of it is audio from the game.</p>
+    <p>The full version plays <b>all 14 radio stations from Cyberpunk 2077</b> with the real songs, DJ lines and menu sounds.
+    You build it from your own copy of the game with one command.</p>
+    <div class="demo-actions">
+      <button class="demo-btn primary" id="demo-try" type="button">TRY THE DEMO</button>
+      <a class="demo-btn" href="{SETUP_URL}" target="_blank" rel="noopener">HOW TO SET UP THE FULL VERSION ↗</a>
+    </div>
+    <div class="demo-hint">OR PRESS ANY KEY</div>
+  </div>
+</div>
+<script src="demo.js"></script>
+"""
+
 
 def patch(path, pairs):
     s = open(path, encoding="utf8").read()
@@ -49,7 +68,8 @@ def main():
         if f.endswith(CODE) or f == "serve.py":
             shutil.copy2(os.path.join(SITE, f), out)
     shutil.copytree(ASSETS, out, dirs_exist_ok=True)
-    shutil.copy2(os.path.join(HERE, "demo.css"), out)
+    for f in ("demo.css", "demo.js"):
+        shutil.copy2(os.path.join(HERE, f), out)
     os.makedirs(os.path.join(out, "fonts"), exist_ok=True)
 
     # one free font family stands in for both game fonts
@@ -68,7 +88,7 @@ def main():
         # the private build stays out of search engines, the demo is meant to be found and shared
         (r'<meta name="robots" content="noindex, nofollow">\n', META),
         (r"</head>", '<link rel="stylesheet" href="demo.css">\n</head>'),
-        (r"</body>",f'<a class="demo-gh" href="{REPO_URL}" target="_blank" rel="noopener">SOURCE ON GITHUB ↗</a>\n</body>'),
+        (r"</body>", INTRO + "</body>"),
     ])
     print("demo site:", out)
 

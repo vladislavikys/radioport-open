@@ -400,7 +400,7 @@ def main():
             d = float(subprocess.run(["ffprobe", "-v", "error", "-show_entries", "format=duration", "-of", "csv=p=0", mp3],
                                      check=True, capture_output=True, text=True).stdout)
             stations.append({"id": sid, "name": name, "freq": freq, "logo": sid, "blips": [],
-                             "tracks": [{"f": fname + ".mp3", "a": "Radioport Demo", "t": title, "d": round(d, 1), "g": 0.0}]})
+                             "tracks": [{"f": fname + ".mp3", "a": "Demo loop", "t": title, "d": round(d, 1), "g": 0.0}]})
 
         browser = find_browser()
         for name, body in LOGOS.items():

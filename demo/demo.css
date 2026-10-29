@@ -1,4 +1,4 @@
-/* Demo build only: readable demo notice on the boot screen and a link back to the repository. */
+/* Demo build only: intro screen, demo notice on the boot screen and a link to the setup guide. */
 .boot-line { font-size: 15px; letter-spacing: 0.2em; color: var(--red); max-width: 90vw; line-height: 1.5; }
 
 .demo-gh {
@@ -8,3 +8,28 @@
   color: var(--cyan-dim); text-decoration: none; padding: 6px 10px;
 }
 .demo-gh:hover, .demo-gh:focus-visible { color: var(--cyan-hi); }
+
+.demo-intro {
+  position: fixed; inset: 0; z-index: 25; display: grid; place-items: center; padding: 56px 16px 24px;
+  background: oklch(0.12 0.04 20 / 0.86); overflow-y: auto;
+}
+.demo-card {
+  width: min(560px, 100%); padding: 28px 30px 26px; text-align: left;
+  border: 1px solid var(--red-line); border-left-width: 6px; background: oklch(0.16 0.05 20 / 0.92);
+  font-family: "Raj", system-ui, sans-serif;
+}
+.demo-kicker { font-weight: 700; font-size: 14px; letter-spacing: 0.3em; color: var(--red); }
+.demo-card h2 { margin: 10px 0 16px; font-weight: 700; font-size: clamp(26px, 6vw, 34px); line-height: 1.05; color: var(--cyan-hi); letter-spacing: 0.02em; }
+.demo-card p { margin: 0 0 12px; font-weight: 500; font-size: 18px; line-height: 1.4; color: oklch(0.86 0.04 30); max-width: 60ch; text-transform: none; }
+.demo-card b { color: var(--cyan); font-weight: 700; }
+.demo-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 22px; }
+.demo-btn {
+  font: 700 17px/1 "Raj", system-ui, sans-serif; letter-spacing: 0.1em; padding: 13px 18px; min-height: 44px;
+  border: 1px solid var(--cyan-dim); color: var(--cyan-hi); background: transparent; text-decoration: none; cursor: pointer;
+}
+.demo-btn.primary { background: var(--cyan); border-color: var(--cyan); color: oklch(0.16 0.05 20); }
+.demo-btn:hover { border-color: var(--cyan-hi); }
+.demo-btn.primary:hover { background: var(--cyan-hi); }
+.demo-btn:focus-visible { outline: 2px solid var(--cyan-hi); outline-offset: 3px; }
+.demo-hint { margin-top: 14px; font-size: 13px; letter-spacing: 0.2em; color: var(--red-line); }
+@media (pointer: coarse) { .demo-hint { display: none; } }
