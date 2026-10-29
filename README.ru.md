@@ -77,7 +77,18 @@ py _site/serve.py 8078        # открыть http://localhost:8078
 ## Сборка ассетов из игры
 
 В репозитории нет игровых файлов. Их нужно получить из установленной игры (проверено на версии игры 2.31, GOG, с Phantom Liberty).
-Подробная инструкция с проверкой после каждого шага и разбором ошибок (на английском): [docs/SETUP.md](docs/SETUP.md).
+
+**Быстрая установка (2 шага):**
+
+1. Скачай [radioport-open-main.zip](https://github.com/vladislavikys/radioport-open/archive/refs/heads/main.zip) и распакуй (правый клик → «Извлечь все»).
+2. Дважды щёлкни `Install.bat`. Если Windows покажет «Система Windows защитила ваш компьютер», нажми «Подробнее» → «Выполнить в любом случае».
+
+Установщик сам ставит недостающее (Python, ffmpeg, .NET 10 Runtime, WolvenKit CLI, vgmstream), **сам находит игру**
+в Steam, GOG Galaxy, Epic Games или на любом диске, собирает плеер (20–25 минут), создаёт ярлык **Radioport** на рабочем столе
+и открывает плеер. Если игру найти не удалось, откроется окно выбора папки.
+
+Ручная установка по шагам, проверенные версии и разбор ошибок (на английском): [docs/SETUP.md](docs/SETUP.md).
+Ниже то же самое вручную.
 
 1. Установи инструменты: Python 3, `ffmpeg` в PATH, [.NET 10 Runtime](https://dotnet.microsoft.com/download/dotnet/10.0) (нужен WolvenKit),
    [WolvenKit CLI](https://github.com/WolvenKit/WolvenKit/releases) 9.1.0 (архив `WolvenKit.Console-9.1.0.zip`),

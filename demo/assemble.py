@@ -37,7 +37,7 @@ INTRO = f"""<a class="demo-gh" href="{SETUP_URL}" target="_blank" rel="noopener"
     <h2 id="demo-title">This is a preview of the interface</h2>
     <p>The music and menu sounds here are <b>synthesized placeholders</b> made for this demo. None of it is audio from the game.</p>
     <p>The full version plays <b>all 14 radio stations from Cyberpunk 2077</b> with the real songs, DJ lines and menu sounds.
-    You build it from your own copy of the game with one command.</p>
+    You build it from your own copy of the game with a one-click installer.</p>
     <div class="demo-actions">
       <button class="demo-btn primary" id="demo-try" type="button">TRY THE DEMO</button>
       <a class="demo-btn" href="{SETUP_URL}" target="_blank" rel="noopener">HOW TO SET UP THE FULL VERSION ↗</a>

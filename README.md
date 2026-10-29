@@ -19,7 +19,7 @@ crossfade, DJ voice lines, sleep timer, stats, and support for phones and gamepa
 
 > **No game files in this repository.** It contains code and extraction scripts only: no music, voices, logos or fonts
 > from the game, and no links to them. The screenshots above show the interface. You build the assets yourself from
-> **your own copy** of the game with one command (see [Build from your game](#build-from-your-game)).
+> **your own copy** of the game with a one-click installer (see [Build from your game](#build-from-your-game)).
 > Keep the built site private: the music belongs to its artists and CD PROJEKT RED.
 >
 > Unofficial fan project, not affiliated with or endorsed by CD PROJEKT RED. *Cyberpunk 2077* is a trademark of CD PROJEKT S.A.
@@ -51,35 +51,16 @@ crossfade, DJ voice lines, sleep timer, stats, and support for phones and gamepa
 
 ## Build from your game
 
-**📖 Full step-by-step guide with checks and troubleshooting: [docs/SETUP.md](docs/SETUP.md).**
+You need Windows 10/11, Cyberpunk 2077 installed (tested with game version 2.31) and about 3 GB of free space.
 
-Windows 10/11, an installed copy of Cyberpunk 2077 (tested with game version 2.31), about 3 GB of free space, about 30 minutes.
-The short version, in PowerShell:
+1. **Download** [radioport-open-main.zip](https://github.com/vladislavikys/radioport-open/archive/refs/heads/main.zip) and extract it (right-click → **Extract All**).
+2. **Double-click `Install.bat`.**
 
-```powershell
-# 1. prerequisites (then open a new PowerShell window)
-winget install -e --id Python.Python.3.13
-winget install -e --id Gyan.FFmpeg
-winget install -e --id Microsoft.DotNet.Runtime.10
-winget install -e --id Git.Git
+The installer installs what is missing (Python, ffmpeg, .NET 10 Runtime, WolvenKit CLI, vgmstream), **finds your game**
+in Steam, GOG Galaxy, Epic Games or on any drive, builds the player (20–25 minutes), puts a **Radioport** shortcut
+on your desktop and opens the player. If it cannot find the game, it asks you to choose the folder.
 
-# 2. code and tools
-git clone https://github.com/vladislavikys/radioport-open.git radioport
-cd radioport
-$ProgressPreference = 'SilentlyContinue'
-Invoke-WebRequest https://github.com/WolvenKit/WolvenKit/releases/download/9.1.0/WolvenKit.Console-9.1.0.zip -OutFile wolvenkit.zip
-Expand-Archive wolvenkit.zip tools\wolvenkit -Force
-Invoke-WebRequest https://github.com/vgmstream/vgmstream/releases/latest/download/vgmstream-win64.zip -OutFile vgmstream.zip
-Expand-Archive vgmstream.zip tools\vgmstream -Force
-
-# 3. build (20–25 minutes), use your own game folder
-py build.py --game "C:\Program Files (x86)\Steam\steamapps\common\Cyberpunk 2077"
-
-# 4. play: open http://localhost:8077
-py site\serve.py 8077
-```
-
-If something is missing, `build.py` says what and how to fix it. After an error, run it again: finished steps are skipped.
+Step-by-step manual setup, the versions it was tested with, and troubleshooting: **[docs/SETUP.md](docs/SETUP.md)**.
 
 ## Run the demo locally
 
@@ -127,6 +108,7 @@ back to a station, the broadcast has moved on without you.
 ## Project layout
 
 ```
+Install.bat           one-click installer (runs install.ps1)
 build.py              one-command build from your game
 site/                 the web app (no build step)
   index.html          main screen

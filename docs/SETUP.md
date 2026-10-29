@@ -1,6 +1,32 @@
 # Setup guide
 
 This guide builds the full Radioport player from your own copy of Cyberpunk 2077 and starts it on your computer.
+
+## Quick install (recommended)
+
+1. **Download** the code: [radioport-open-main.zip](https://github.com/vladislavikys/radioport-open/archive/refs/heads/main.zip).
+   Right-click the file → **Extract All** → **Extract**.
+2. **Double-click `Install.bat`** in the extracted folder.
+   If Windows shows "Windows protected your PC", click **More info → Run anyway**.
+
+That is all. The installer:
+
+- installs Python, ffmpeg and the .NET 10 Runtime if they are missing (Windows may ask for permission);
+- downloads the extraction tools, WolvenKit CLI and vgmstream;
+- **finds your game** in Steam, GOG Galaxy, Epic Games or on any drive. Only if it cannot, it opens a window
+  where you choose the Cyberpunk 2077 folder;
+- builds the player (20–25 minutes, you can leave it running);
+- creates a **Radioport** shortcut on your desktop and starts the player in your browser.
+
+Next time, just open the **Radioport** shortcut. Keep its black window open while you listen.
+If something goes wrong, the installer says what to do; after fixing it, run `Install.bat` again:
+finished parts are skipped. See also [Troubleshooting](#troubleshooting).
+
+To reach the player from your phone or from outside your home: [HOSTING.md](HOSTING.md).
+
+## Manual setup
+
+Use this if you prefer to see every step, or if the installer does not work on your system.
 Follow the steps in order. Each step ends with a check, so you know it worked before you go on.
 
 **What you get:** 14 radio stations, 164 songs, 40 station jingles, DJ lines, the game's menu sounds, logos and fonts.
