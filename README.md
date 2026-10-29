@@ -68,9 +68,9 @@ git clone https://github.com/vladislavikys/radioport-open.git radioport
 cd radioport
 $ProgressPreference = 'SilentlyContinue'
 Invoke-WebRequest https://github.com/WolvenKit/WolvenKit/releases/download/9.1.0/WolvenKit.Console-9.1.0.zip -OutFile wolvenkit.zip
-Expand-Archive wolvenkit.zip tools\wolvenkit
+Expand-Archive wolvenkit.zip tools\wolvenkit -Force
 Invoke-WebRequest https://github.com/vgmstream/vgmstream/releases/latest/download/vgmstream-win64.zip -OutFile vgmstream.zip
-Expand-Archive vgmstream.zip tools\vgmstream
+Expand-Archive vgmstream.zip tools\vgmstream -Force
 
 # 3. build (20–25 minutes), use your own game folder
 py build.py --game "C:\Program Files (x86)\Steam\steamapps\common\Cyberpunk 2077"
@@ -140,16 +140,22 @@ pipeline/             extraction scripts (Wwise banks, wem → mp3, DJ lines, me
 demo/                 the demo: generate.py (synthesis, logos), assemble.py (demo site), assets/
 deploy/               nginx + docker-compose for a home server
 docs/SETUP.md         step-by-step setup guide
+docs/HOSTING.md       phone, Tailscale, home server, own domain with Cloudflare
 docs/PIPELINE.md      how the data is pulled from the game archives
 ```
 
-## Hosting at home
+## Listening on your phone and away from home
 
-The site is static. Any web server with Range support works. `deploy/` has an `nginx:alpine` container
-with a memory limit and read-only files, plus an optional systemd timer that pulls code updates from git.
-See [README.ru.md](README.ru.md#хостинг-дома) for the full setup.
+**📖 [docs/HOSTING.md](docs/HOSTING.md)** compares four options and walks through each:
 
-**Do not put the built site on the open internet.** Put it behind a login, for example Cloudflare Tunnel with Cloudflare Access.
+| Option | Works where | Cost |
+|---|---|---|
+| Phone on the same Wi-Fi | at home | free |
+| **Tailscale** (recommended) | anywhere, on your own devices, with HTTPS | free |
+| Always-on home server (`deploy/`: nginx in Docker) | 24/7 without your PC | spare hardware |
+| Your own domain with Cloudflare Tunnel + Access | anywhere, in any browser, behind a login | domain, about $10–12 a year |
+
+**Do not put the built site on the open internet.** Keep it on your own devices or behind a login.
 
 ## Browser support
 

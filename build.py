@@ -14,9 +14,25 @@ PIPE = os.path.join(ROOT, "pipeline")
 CONFIG = os.path.join(ROOT, "config.json")
 
 
+def fix_argv(argv):
+    # Windows PowerShell passes  --game "C:\Games\Cyberpunk 2077\" --only sfx  as one argument
+    # C:\Games\Cyberpunk 2077" --only sfx  (the trailing \ escapes the quote); split it back
+    out = []
+    for x in argv:
+        head, quote, tail = x.partition('"')
+        out.append(head)
+        if quote:
+            out += tail.split()
+    return out
+
+
+def clean_path(p):
+    return p.strip().rstrip("\\/") if p else p
+
+
 def save_config(**kw):
     cfg = json.load(open(CONFIG, encoding="utf8")) if os.path.exists(CONFIG) else {}
-    cfg.update({k: v for k, v in kw.items() if v})
+    cfg.update({k: clean_path(v) for k, v in kw.items() if v})
     json.dump(cfg, open(CONFIG, "w", encoding="utf8"), indent=2)
 
 
@@ -27,7 +43,7 @@ def main():
     ap.add_argument("--vgmstream", help="path to vgmstream-cli.exe")
     ap.add_argument("--only", help="run only this step")
     ap.add_argument("--force", help="redo this step even if it is done")
-    a = ap.parse_args()
+    a = ap.parse_args(fix_argv(sys.argv[1:]))
     if a.game or a.wolvenkit or a.vgmstream:
         save_config(game=a.game, wolvenkit=a.wolvenkit, vgmstream=a.vgmstream)
 

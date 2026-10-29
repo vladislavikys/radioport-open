@@ -29,7 +29,8 @@ The result matched the reference build file for file.
 
 The song list in this repository (`pipeline/data/tracks_manifest.json`) was made from game version 2.31.
 Other versions should work as well: songs that your version does not have are skipped with a warning.
-Phantom Liberty is not required: the radio songs are in the base game archives.
+The build reads only the base game archives (`archive\pc\content`), so Phantom Liberty should not be needed,
+but a copy without it was not tested.
 
 > Everything you build stays on your computer. Do not upload the built site to a public server:
 > the music belongs to its artists and CD PROJEKT RED.
@@ -72,7 +73,9 @@ git clone https://github.com/vladislavikys/radioport-open.git radioport
 cd radioport
 ```
 
-Without Git: on the repository page, click **Code → Download ZIP**, unpack it and open PowerShell in that folder.
+Without Git: on the repository page, click **Code → Download ZIP** and unpack it. Open the unpacked folder
+(`radioport-open-main`) in File Explorer, click the address bar, type `powershell` and press Enter:
+PowerShell opens in that folder. Without Git, updating later means downloading the ZIP again.
 
 **Check:** `dir` shows `build.py`, `site` and `pipeline`.
 
@@ -83,9 +86,9 @@ These two tools read the game's archives and decode its audio. Run this in the `
 ```powershell
 $ProgressPreference = 'SilentlyContinue'   # makes downloads much faster in Windows PowerShell
 Invoke-WebRequest https://github.com/WolvenKit/WolvenKit/releases/download/9.1.0/WolvenKit.Console-9.1.0.zip -OutFile wolvenkit.zip
-Expand-Archive wolvenkit.zip tools\wolvenkit
+Expand-Archive wolvenkit.zip tools\wolvenkit -Force
 Invoke-WebRequest https://github.com/vgmstream/vgmstream/releases/latest/download/vgmstream-win64.zip -OutFile vgmstream.zip
-Expand-Archive vgmstream.zip tools\vgmstream
+Expand-Archive vgmstream.zip tools\vgmstream -Force
 Remove-Item wolvenkit.zip, vgmstream.zip
 ```
 
@@ -109,7 +112,13 @@ You need the folder that contains `archive\pc\content`. Typical places:
 | GOG Galaxy | `C:\Program Files (x86)\GOG Galaxy\Games\Cyberpunk 2077` |
 | Epic Games | `C:\Program Files\Epic Games\Cyberpunk2077` |
 
-In Steam you can also right-click the game → **Manage → Browse local files**.
+The launcher can open the folder for you:
+
+- **Steam:** right-click the game → **Manage → Browse local files**.
+- **GOG Galaxy:** open the game → **⚙ (settings) → Manage installation → Show folder**.
+- **Epic Games:** Library → **⋯** on the game → **Manage** → folder icon next to the install path.
+
+Then click the address bar in File Explorer and copy the path.
 
 **Check** (put your own path in the quotes):
 
@@ -165,7 +174,8 @@ Your phone must be on the same Wi-Fi network as the computer.
    py site\serve.py 8077 0.0.0.0
    ```
    If Windows asks whether to allow Python on networks, allow **Private networks** only.
-2. Find the computer's address: run `ipconfig` and look for **IPv4 Address**, for example `192.168.1.20`.
+2. Find the computer's address: run `ipconfig` and look for **IPv4 Address** (on a Russian Windows: **IPv4-адрес**),
+   for example `192.168.1.20`.
 3. On the phone, open `http://192.168.1.20:8077`.
 
 On the phone you can add the page to the home screen; it then opens like an app.
@@ -187,7 +197,8 @@ After the build you can delete the `work` folder (about 1.5 GB of temporary file
 | `py` or `ffmpeg` is not recognized | The program is not on `PATH`. Open a new PowerShell window after installing. If that does not help, reinstall Python with "Add python.exe to PATH" ticked. |
 | `WolvenKit.CLI.exe does not start` | The .NET 10 Runtime is missing: `winget install Microsoft.DotNet.Runtime.10`. |
 | `game folder: set "game" in config.json` | The path is wrong. It must be the folder that contains `archive\pc\content` (step 4). Use quotes around a path with spaces. |
-| `WolvenKit failed on ... .archive` | The game files are incomplete or the game is updating. In Steam use **Properties → Installed Files → Verify integrity**, then run the build again. |
+| `WolvenKit failed on ... .archive` | The game files are incomplete or the game is updating. Verify the files (Steam: **Properties → Installed Files → Verify integrity of game files**; GOG Galaxy: **Manage installation → Verify / Repair**), then run the build again. |
+| `winget` is not recognized | Install **App Installer** from the Microsoft Store, or install the programs by hand (links in step 1). |
 | `warning: N songs are not in your game files` | Your game version has fewer songs than the list in this repository. The build skips them; the stations play everything else. |
 | The page opens but there is no sound | Press a key or click the page first: browsers only start audio after you interact with the page. Check the volume (`A`/`D`). |
 | No spectrum, music does not start in the middle of a song | The page was opened as a file. Open it through `serve.py` at `http://localhost:8077`, not by double-clicking `index.html`. |
@@ -201,5 +212,5 @@ Still stuck? [Open an issue](https://github.com/vladislavikys/radioport-open/iss
 - **Paths without arguments:** copy `config.example.json` to `config.json` and edit it. Keys: `game`, `wolvenkit`, `vgmstream`, `work`, `site`.
   Environment variables `CP2077_GAME`, `WOLVENKIT`, `VGMSTREAM`, `CP2077_WORK` and `CP2077_SITE` work too.
 - **One step only:** `py build.py --only sfx`.
-- **Host it on a home server:** see [Hosting at home](../README.md#hosting-at-home). Keep it behind a login.
+- **Listen away from home** (Tailscale, home server, your own domain with Cloudflare): see [HOSTING.md](HOSTING.md).
 - **How the extraction works:** [PIPELINE.md](PIPELINE.md).
