@@ -1,0 +1,39 @@
+name: Demo on GitHub Pages
+
+on:
+  push:
+    branches: [main]
+    paths: [site/**, demo/**, .github/workflows/pages.yml]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v4
+      - name: Assemble the demo site
+        run: |
+          python3 demo/assemble.py _site
+          rm _site/serve.py
+          base=https://raw.githubusercontent.com/google/fonts/8772f86137e17678cbd3584ca9a3c9486c3e7e50/ofl/rajdhani
+          curl -fsSL -o _site/fonts/raj-medium.ttf $base/Rajdhani-Medium.ttf
+          curl -fsSL -o _site/fonts/raj-bold.ttf $base/Rajdhani-Bold.ttf
+          curl -fsSL -o _site/fonts/OFL.txt $base/OFL.txt
+      - uses: actions/configure-pages@v5
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: _site
+      - id: deployment
+        uses: actions/deploy-pages@v4

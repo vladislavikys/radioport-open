@@ -21,3 +21,4 @@ __pycache__/
 *.log
 
 config.json
+_site/

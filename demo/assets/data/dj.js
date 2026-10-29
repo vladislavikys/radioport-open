@@ -1,0 +1,1 @@
+window.DJ = {"songs":{},"ash":[]};

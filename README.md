@@ -1,5 +1,7 @@
 # Radioport
 
+**[▶ Live demo](https://vladislavikys.github.io/radioport-open/)**: the same player with three synthesized demo tracks, no game files.
+
 <p align="center">
   <img src="docs/img/demo.gif" alt="Radioport: switching stations" width="340">
   &nbsp;
@@ -63,6 +65,18 @@ py site/serve.py 8077        # или site\start.bat на Windows
 # открыть http://localhost:8077
 ```
 
+### Демо без игры
+
+Посмотреть плеер можно и без игры: [онлайн-демо](https://vladislavikys.github.io/radioport-open/) или локально.
+В демо три станции с треками, синтезированными скриптом `demo/generate.py`, свои логотипы и свободный шрифт Rajdhani.
+
+```bash
+py demo/assemble.py _site     # код из site/ + demo/assets
+py _site/serve.py 8078        # открыть http://localhost:8078
+```
+
+Без шрифтов Rajdhani в `_site/fonts` демо покажет системный шрифт. Онлайн-демо собирается workflow `.github/workflows/pages.yml` при каждом пуше.
+
 Обычный `python -m http.server` не подойдёт: плееру нужны HTTP Range-запросы, чтобы начинать песню с «живой» позиции. `serve.py` их поддерживает.
 Спектр работает только по `http://`, не через `file://`.
 
@@ -109,6 +123,7 @@ pipeline/             скрипты извлечения данных из иг
   extract_assets.py   логотипы, шрифты, иконки
   data/               малые манифесты (названия, замеры), без аудио
   research/           исследовательские скрипты
+demo/                 демо без игры: generate.py (синтез треков, логотипы), assemble.py (сборка сайта), assets/
 docs/PIPELINE.md      как данные добываются из архивов игры
 ```
 
@@ -149,10 +164,6 @@ deploy key (read-only), занести ключи хоста GitHub в `known_ho
 ## Совместимость
 
 Chrome/Edge/Firefox/Safari современных версий. На телефоне работает как PWA; для фоновой игры и кнопок на экране блокировки используется Media Session. Service worker кэширует только оболочку приложения, музыка не кэшируется.
-
-## Лицензия
-
-Для кода лицензия не выбрана. Игровые материалы в репозиторий не входят и не распространяются.
 
 ## Лицензия
 

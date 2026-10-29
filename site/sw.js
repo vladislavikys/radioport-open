@@ -1,6 +1,6 @@
 /* App-shell cache. Audio is never cached here: it is huge and uses Range requests. (deployed from git) */
-const V = 'radioport-v15';
-const SHELL = ['./', 'index.html', 'stats.html', 'style.css?v=12', 'app.js?v=18', 'fx.js?v=7', 'data/tracks.js?v=9', 'data/dj.js?v=7', 'manifest.webmanifest',
+const V = 'radioport-v16';
+const SHELL = ['./', 'index.html', 'stats.html', 'style.css?v=12', 'app.js?v=19', 'fx.js?v=7', 'data/tracks.js?v=9', 'data/dj.js?v=7', 'manifest.webmanifest',
   'fonts/blenderpro-book.ttf', 'fonts/blenderpro-bold.ttf', 'fonts/raj-medium.ttf', 'fonts/raj-bold.ttf'];
 
 self.addEventListener('install', (e) => {

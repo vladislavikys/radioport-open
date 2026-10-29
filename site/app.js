@@ -700,7 +700,8 @@
     const saved = store.get();
     if (typeof saved.vol === 'number') st.vol = saved.vol;
     const si = S.findIndex((s) => s.id === saved.station);
-    st.hi = si > 1 || (si === 1 && favStation.tracks.length) ? si : S.findIndex((s) => s.id === 'dark_star');
+    const def = S.findIndex((s) => s.id === 'dark_star');
+    st.hi = si > 1 || (si === 1 && favStation.tracks.length) ? si : def >= 0 ? def : S.findIndex((s) => s.tracks.length);
     paintVol(false); paintList(); paintArt(false); paintSleep(); paintDj(); paintScan(); paintOnAir();
     setOpen(true);
     tune(st.hi);
