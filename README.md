@@ -56,11 +56,15 @@ You need Windows 10/11, Cyberpunk 2077 installed (tested with game version 2.31)
 1. **Download** [radioport-open-main.zip](https://github.com/vladislavikys/radioport-open/archive/refs/heads/main.zip) and extract it (right-click → **Extract All**).
 2. **Double-click `Install.bat`.**
 
-The installer installs what is missing (Python, ffmpeg, .NET 10 Runtime, WolvenKit CLI, vgmstream), **finds your game**
-in Steam, GOG Galaxy, Epic Games or on any drive, builds the player (20–25 minutes), puts a **Radioport** shortcut
-on your desktop and opens the player. If it cannot find the game, it asks you to choose the folder.
+The installer asks before installing missing programs (Python, ffmpeg, .NET 10 Runtime), downloads WolvenKit CLI
+and vgmstream, **finds your game** in Steam, GOG Galaxy, Epic Games or on any drive, builds the player
+(20–25 minutes), puts a **Radioport** shortcut on your desktop and opens the player.
+If it cannot find the game, it asks you to choose the folder.
 
-Step-by-step manual setup, the versions it was tested with, and troubleshooting: **[docs/SETUP.md](docs/SETUP.md)**.
+**`Install.bat` is optional.** It is a plain script that runs the manual steps for you: it only reads the game files,
+changes nothing in Windows settings and sends nothing anywhere.
+[What it does, exactly](docs/SETUP.md#what-installbat-does-exactly) ·
+[do it by hand instead](docs/SETUP.md#manual-setup) · [tested versions and troubleshooting](docs/SETUP.md).
 
 ## Run the demo locally
 

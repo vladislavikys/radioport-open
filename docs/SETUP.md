@@ -2,45 +2,78 @@
 
 This guide builds the full Radioport player from your own copy of Cyberpunk 2077 and starts it on your computer.
 
-## Quick install (recommended)
-
-1. **Download** the code: [radioport-open-main.zip](https://github.com/vladislavikys/radioport-open/archive/refs/heads/main.zip).
-   Right-click the file → **Extract All** → **Extract**.
-2. **Double-click `Install.bat`** in the extracted folder.
-   If Windows shows "Windows protected your PC", click **More info → Run anyway**.
-
-That is all. The installer:
-
-- installs Python, ffmpeg and the .NET 10 Runtime if they are missing (Windows may ask for permission);
-- downloads the extraction tools, WolvenKit CLI and vgmstream;
-- **finds your game** in Steam, GOG Galaxy, Epic Games or on any drive. Only if it cannot, it opens a window
-  where you choose the Cyberpunk 2077 folder;
-- builds the player (20–25 minutes, you can leave it running);
-- creates a **Radioport** shortcut on your desktop and starts the player in your browser.
-
-Next time, just open the **Radioport** shortcut. Keep its black window open while you listen.
-If something goes wrong, the installer says what to do; after fixing it, run `Install.bat` again:
-finished parts are skipped. See also [Troubleshooting](#troubleshooting).
-
-To reach the player from your phone or from outside your home: [HOSTING.md](HOSTING.md).
-
-## Manual setup
-
-Use this if you prefer to see every step, or if the installer does not work on your system.
-Follow the steps in order. Each step ends with a check, so you know it worked before you go on.
-
 **What you get:** 14 radio stations, 164 songs, 40 station jingles, DJ lines, the game's menu sounds, logos and fonts.
 
 | | |
 |---|---|
 | System | Windows 10 or 11 (64-bit). Linux and macOS are not tested. |
-| Game | Cyberpunk 2077 installed from any store (version 2.31 recommended, see below) |
-| Free disk space | about 3 GB (1.4 GB for the finished site, 1.5 GB of temporary files) |
-| Time | about 10 minutes of setup, then 20–25 minutes of automatic build |
+| Game | Cyberpunk 2077 installed from any store (version 2.31 recommended, see [Tested with](#tested-with)) |
+| Free disk space | about 3 GB (1.4 GB for the finished player, 1.5 GB of temporary files) |
+| Time | a few minutes of your time, then 20–25 minutes of automatic build |
+
+> Everything you build stays on your computer. Do not upload the built player to a public server:
+> the music belongs to its artists and CD PROJEKT RED.
+
+**There are two ways to set it up. Both give the same result.**
+
+- **[Quick install](#quick-install):** double-click `Install.bat`. It runs the manual steps for you.
+- **[Manual setup](#manual-setup):** you run every step yourself, with a check after each one.
+
+`Install.bat` is only a convenience. You do not need it: the manual steps do exactly the same thing.
+
+## Quick install
+
+1. **Download** the code: [radioport-open-main.zip](https://github.com/vladislavikys/radioport-open/archive/refs/heads/main.zip).
+   Right-click the file → **Extract All** → **Extract**.
+2. **Double-click `Install.bat`** in the extracted folder.
+   Windows may show "Windows protected your PC": it shows this for every script downloaded from the internet
+   that is not signed by a company. Click **More info → Run anyway**, or use the [manual setup](#manual-setup) instead.
+
+A black window shows each step as it runs. If programs are missing, it lists them and asks before installing anything.
+At the end, the player opens in your browser, and a **Radioport** shortcut is on your desktop for next time.
+Keep the shortcut's black window open while you listen.
+
+If something goes wrong, the window says what to do. After fixing it, run `Install.bat` again: finished parts are skipped.
+
+### What Install.bat does, exactly
+
+`Install.bat` only starts `install.ps1`, a plain PowerShell script of about 170 lines. You can open both in Notepad
+and read them before running. The script does the four steps of the manual setup, in the same order:
+
+| Step | What the script does | Same as manual step |
+|---|---|---|
+| 1. Programs | Checks for Python, ffmpeg and the .NET 10 Runtime. If any are missing, it lists them, **asks you**, and installs them with `winget`, the package manager built into Windows. | [1](#1-install-the-prerequisites) |
+| 2. Tools | Downloads WolvenKit CLI 9.1.0 and vgmstream from their official GitHub release pages into the `tools` folder. | [3](#3-get-wolvenkit-cli-and-vgmstream) |
+| 3. Game folder | Looks for the game where the launchers record it: Steam (registry and library list), GOG Galaxy (registry), Epic Games (its install list). Then it checks folder names two levels deep on your drives. If it finds nothing, it asks you to choose the folder. | [4](#4-find-your-game-folder) |
+| 4. Build | Runs `py build.py --game "<your game folder>"`, the same command as in the manual setup. | [5](#5-build) |
+| End | Creates the **Radioport** desktop shortcut to `site\start.bat` and starts it. | [6](#6-start-the-player) |
+
+**What changes on your PC:**
+
+- the programs from step 1, only if they were missing and you agreed;
+- inside the Radioport folder: `tools\`, `work\`, the built player in `site\`, and `config.json` with your game path;
+- one shortcut on the desktop.
+
+**What it never does:**
+
+- it does not change, move or delete game files: it only reads them;
+- it does not change Windows settings or write to the registry (it only reads where the launchers installed the game);
+- it does not send anything anywhere: the only downloads are `winget` packages and the two tools from GitHub;
+- it does not need administrator rights. Windows may ask for permission only when `winget` installs a program.
+
+**To remove everything:** delete the Radioport folder and the desktop shortcut.
+The programs from step 1 can be removed in **Settings → Apps** if you do not need them.
+
+To reach the player from your phone or from outside your home: [HOSTING.md](HOSTING.md).
+
+## Manual setup
+
+Use this if you prefer to do every step yourself or if `Install.bat` does not work on your system.
+Follow the steps in order. Each step ends with a check, so you know it worked before you go on.
 
 ### Tested with
 
-This exact setup was built from scratch on 2026-10-29, following this guide step by step.
+This setup was built from scratch on 2026-10-29, both by following these steps and with `Install.bat`.
 The result matched the reference build file for file.
 
 | Component | Version |
@@ -58,19 +91,16 @@ Other versions should work as well: songs that your version does not have are sk
 The build reads only the base game archives (`archive\pc\content`), so Phantom Liberty should not be needed,
 but a copy without it was not tested.
 
-> Everything you build stays on your computer. Do not upload the built site to a public server:
-> the music belongs to its artists and CD PROJEKT RED.
-
 ## 1. Install the prerequisites
 
-You need Python 3, ffmpeg, the .NET 10 Runtime (WolvenKit needs it) and Git.
+You need Python 3, ffmpeg and the .NET 10 Runtime (WolvenKit needs it). Git is optional: it is only for `git clone` in step 2.
 Open **PowerShell** and run:
 
 ```powershell
 winget install -e --id Python.Python.3.13
 winget install -e --id Gyan.FFmpeg
 winget install -e --id Microsoft.DotNet.Runtime.10
-winget install -e --id Git.Git
+winget install -e --id Git.Git        # optional
 ```
 
 Then **close PowerShell and open a new window**, so it picks up the new programs.
@@ -99,7 +129,7 @@ git clone https://github.com/vladislavikys/radioport-open.git radioport
 cd radioport
 ```
 
-Without Git: on the repository page, click **Code → Download ZIP** and unpack it. Open the unpacked folder
+Without Git: download [radioport-open-main.zip](https://github.com/vladislavikys/radioport-open/archive/refs/heads/main.zip) and unpack it. Open the unpacked folder
 (`radioport-open-main`) in File Explorer, click the address bar, type `powershell` and press Enter:
 PowerShell opens in that folder. Without Git, updating later means downloading the ZIP again.
 
@@ -212,7 +242,8 @@ After the build you can delete the `work` folder (about 1.5 GB of temporary file
 
 ## Updating
 
-- **New code:** run `git pull`, then refresh the page in the browser.
+- **New code:** download the ZIP again and extract it over the old folder (your built music stays, it is not in the ZIP),
+  or run `git pull` if you used Git. Then refresh the page in the browser.
 - **After a game patch:** run `py build.py` again. It adds whatever is missing.
   To rebuild everything from scratch, delete `site\audio`, `site\dj` and the `work` folder first.
 
@@ -220,8 +251,11 @@ After the build you can delete the `work` folder (about 1.5 GB of temporary file
 
 | Message or symptom | Cause and fix |
 |---|---|
+| "Windows protected your PC" when starting `Install.bat` | Normal for unsigned scripts from the internet. Click **More info → Run anyway**, or follow the [manual setup](#manual-setup). |
+| The installer cannot find the game and opens a folder window | Choose the folder that contains `archive` (see [step 4](#4-find-your-game-folder) for where launchers put it). |
+| The installer says a program is "still not found" | Windows needs a fresh window to see new programs. Close the window and double-click `Install.bat` again. |
 | `py` or `ffmpeg` is not recognized | The program is not on `PATH`. Open a new PowerShell window after installing. If that does not help, reinstall Python with "Add python.exe to PATH" ticked. |
-| `WolvenKit.CLI.exe does not start` | The .NET 10 Runtime is missing: `winget install Microsoft.DotNet.Runtime.10`. |
+| `WolvenKit.CLI.exe does not start` | The .NET 10 Runtime is missing: `winget install -e --id Microsoft.DotNet.Runtime.10`. |
 | `game folder: set "game" in config.json` | The path is wrong. It must be the folder that contains `archive\pc\content` (step 4). Use quotes around a path with spaces. |
 | `WolvenKit failed on ... .archive` | The game files are incomplete or the game is updating. Verify the files (Steam: **Properties → Installed Files → Verify integrity of game files**; GOG Galaxy: **Manage installation → Verify / Repair**), then run the build again. |
 | `winget` is not recognized | Install **App Installer** from the Microsoft Store, or install the programs by hand (links in step 1). |

@@ -114,6 +114,11 @@ if ($need) {
         Fail ("Missing: $($need -join ', '). Install 'App Installer' from the Microsoft Store (it adds winget) and run Install.bat again,`n" +
               "or install the programs by hand: see docs/SETUP.md, manual setup.")
     }
+    Write-Host '   These programs are missing and will be installed with winget (the Windows package manager):'
+    $need | ForEach-Object { Write-Host "     - $_" }
+    Write-Host '   By continuing you accept their licenses. Nothing else on your PC is changed.'
+    $answer = Read-Host '   Install them now? [Y/n]'
+    if ($answer -match '^\s*n') { Fail 'Nothing was installed. Install the programs yourself (docs/SETUP.md, manual setup) and run Install.bat again.' }
     foreach ($id in $need) {
         Write-Host "   installing $id (Windows may ask for permission)..."
         winget install -e --id $id --silent --accept-package-agreements --accept-source-agreements | Out-Host
