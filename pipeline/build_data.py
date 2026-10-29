@@ -44,7 +44,7 @@ stations = {}
 blips = collections.defaultdict(list)
 for t in T:
     sid = by_num.get(t['station'])
-    if not sid:
+    if not sid or not os.path.exists(os.path.join(SITE, 'audio', t['file'])):
         continue
     if 'blips' in t['event']:
         blips[sid].append(t['file'])

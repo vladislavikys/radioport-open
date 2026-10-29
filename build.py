@@ -39,6 +39,7 @@ def main():
         print("Not ready yet:")
         for p in problems:
             print("  -", p)
+        print("Step-by-step guide: docs/SETUP.md")
         sys.exit(1)
 
     tracks = json.load(open(os.path.join(C.DATA, "tracks_manifest.json"), encoding="utf8"))

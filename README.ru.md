@@ -76,10 +76,13 @@ py _site/serve.py 8078        # открыть http://localhost:8078
 
 ## Сборка ассетов из игры
 
-В репозитории нет игровых файлов. Их нужно получить из установленной игры (проверено на версии 2.31 с Phantom Liberty).
+В репозитории нет игровых файлов. Их нужно получить из установленной игры (проверено на версии игры 2.31, GOG, с Phantom Liberty).
+Подробная инструкция с проверкой после каждого шага и разбором ошибок (на английском): [docs/SETUP.md](docs/SETUP.md).
 
-1. Установи инструменты: [WolvenKit CLI](https://github.com/WolvenKit/WolvenKit/releases) (9.1.0), [vgmstream-cli](https://github.com/vgmstream/vgmstream/releases), `ffmpeg` в PATH, Python 3.
-   WolvenKit и vgmstream можно положить в `tools/wolvenkit/` и `tools/vgmstream/`, тогда их найдёт сам скрипт.
+1. Установи инструменты: Python 3, `ffmpeg` в PATH, [.NET 10 Runtime](https://dotnet.microsoft.com/download/dotnet/10.0) (нужен WolvenKit),
+   [WolvenKit CLI](https://github.com/WolvenKit/WolvenKit/releases) 9.1.0 (архив `WolvenKit.Console-9.1.0.zip`),
+   [vgmstream-cli](https://github.com/vgmstream/vgmstream/releases) (архив `vgmstream-win64.zip`).
+   Архивы WolvenKit и vgmstream распакуй в `tools/wolvenkit/` и `tools/vgmstream/`, тогда скрипт найдёт их сам.
 2. Запусти сборку одной командой (путь к игре сохранится в `config.json`):
    ```bash
    py build.py --game "D:\Games\Cyberpunk 2077"
@@ -87,7 +90,8 @@ py _site/serve.py 8078        # открыть http://localhost:8078
    Если чего-то не хватает, скрипт напишет, что именно и где скачать. Готовые шаги пропускаются, поэтому после сбоя
    просто запусти его ещё раз. Повторить один шаг: `py build.py --force dj`. Шаги: `wem`, `audio`, `loudness`, `data`, `dj`, `sfx`, `assets`.
    Полная сборка идёт около 20 минут, почти всё время уходит на перекодирование песен в mp3.
-3. Запусти сайт: `py site/serve.py 8077`.
+3. Запусти сайт: `py site/serve.py 8077`. Чтобы слушать с телефона в той же Wi-Fi сети: `py site/serve.py 8077 0.0.0.0`,
+   затем на телефоне открой `http://<IP компьютера>:8077` (IP покажет `ipconfig`).
 
 Пути можно задать и без аргументов: скопируй `config.example.json` в `config.json` и поправь его.
 Как устроены данные в архивах игры: [docs/PIPELINE.md](docs/PIPELINE.md).

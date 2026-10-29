@@ -8,7 +8,7 @@ Each value comes from config.json in the repo root, then from the environment, t
     wolvenkit  WOLVENKIT  WolvenKit.CLI.exe
     vgmstream  VGMSTREAM  vgmstream-cli.exe
 """
-import json, os, shutil
+import glob, json, os, shutil, subprocess
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 ROOT = os.path.dirname(HERE)
@@ -27,9 +27,10 @@ def _tool(key, env, exe, *local):
     if found:
         return found
     for rel in local:
-        p = os.path.join(ROOT, "tools", *rel.split("/"), exe)
-        if os.path.exists(p):
-            return p
+        # zips unpack with or without a top folder, so look at any depth
+        hits = sorted(glob.glob(os.path.join(ROOT, "tools", rel, "**", exe), recursive=True), key=len)
+        if hits:
+            return hits[0]
     return shutil.which(exe)
 
 
@@ -53,6 +54,8 @@ def missing():
         out.append("game folder: set \"game\" in config.json (the folder that contains archive/pc/content)")
     if not WK or not os.path.exists(WK):
         out.append("WolvenKit.CLI.exe: https://github.com/WolvenKit/WolvenKit/releases (set \"wolvenkit\" in config.json or put it in tools/wolvenkit)")
+    elif subprocess.run([WK, "--version"], capture_output=True).returncode:
+        out.append("WolvenKit.CLI.exe does not start. It needs the .NET 10 Runtime: winget install Microsoft.DotNet.Runtime.10")
     if not VGM or not os.path.exists(VGM):
         out.append("vgmstream-cli.exe: https://github.com/vgmstream/vgmstream/releases (set \"vgmstream\" in config.json or put it in tools/vgmstream)")
     if not FFMPEG or not FFPROBE:

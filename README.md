@@ -51,30 +51,35 @@ crossfade, DJ voice lines, sleep timer, stats, and support for phones and gamepa
 
 ## Build from your game
 
-You need an installed copy of Cyberpunk 2077. The build is tested on Windows with game version 2.31 and Phantom Liberty.
+**📖 Full step-by-step guide with checks and troubleshooting: [docs/SETUP.md](docs/SETUP.md).**
 
-1. Install the tools:
-   - Python 3 and `ffmpeg` on `PATH`;
-   - [WolvenKit CLI](https://github.com/WolvenKit/WolvenKit/releases) 9.1.0;
-   - [vgmstream-cli](https://github.com/vgmstream/vgmstream/releases).
+Windows 10/11, an installed copy of Cyberpunk 2077 (tested with game version 2.31), about 3 GB of free space, about 30 minutes.
+The short version, in PowerShell:
 
-   You can put WolvenKit in `tools/wolvenkit/` and vgmstream in `tools/vgmstream/`; the build finds them there.
-2. Build everything with one command. The game path is saved to `config.json`:
-   ```bash
-   py build.py --game "D:\Games\Cyberpunk 2077"
-   ```
-   If a tool is missing, the script says which one and where to get it. Finished steps are skipped, so after
-   an error you can run the same command again. A full build takes about 20 minutes; most of it is mp3 encoding.
-3. Start the site and open http://localhost:8077:
-   ```bash
-   py site/serve.py 8077
-   ```
+```powershell
+# 1. prerequisites (then open a new PowerShell window)
+winget install -e --id Python.Python.3.13
+winget install -e --id Gyan.FFmpeg
+winget install -e --id Microsoft.DotNet.Runtime.10
+winget install -e --id Git.Git
 
-The steps are `wem`, `audio`, `loudness`, `data`, `dj`, `sfx` and `assets`. Run one step with `--only <step>`, redo one with `--force <step>`.
-You can also set the paths in `config.json` (copy `config.example.json`) or with environment variables.
+# 2. code and tools
+git clone https://github.com/vladislavikys/radioport-open.git radioport
+cd radioport
+$ProgressPreference = 'SilentlyContinue'
+Invoke-WebRequest https://github.com/WolvenKit/WolvenKit/releases/download/9.1.0/WolvenKit.Console-9.1.0.zip -OutFile wolvenkit.zip
+Expand-Archive wolvenkit.zip tools\wolvenkit
+Invoke-WebRequest https://github.com/vgmstream/vgmstream/releases/latest/download/vgmstream-win64.zip -OutFile vgmstream.zip
+Expand-Archive vgmstream.zip tools\vgmstream
 
-Use `serve.py`, not `python -m http.server`: the player needs HTTP Range requests to start a song at the live position.
-The spectrum only works over `http://`, not `file://`.
+# 3. build (20–25 minutes), use your own game folder
+py build.py --game "C:\Program Files (x86)\Steam\steamapps\common\Cyberpunk 2077"
+
+# 4. play: open http://localhost:8077
+py site\serve.py 8077
+```
+
+If something is missing, `build.py` says what and how to fix it. After an error, run it again: finished steps are skipped.
 
 ## Run the demo locally
 
@@ -134,6 +139,7 @@ pipeline/             extraction scripts (Wwise banks, wem → mp3, DJ lines, me
   data/               small manifests (song list, loudness), no audio
 demo/                 the demo: generate.py (synthesis, logos), assemble.py (demo site), assets/
 deploy/               nginx + docker-compose for a home server
+docs/SETUP.md         step-by-step setup guide
 docs/PIPELINE.md      how the data is pulled from the game archives
 ```
 

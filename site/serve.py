@@ -47,6 +47,7 @@ class H(SimpleHTTPRequestHandler):
 
 if __name__ == '__main__':
     port = int(sys.argv[1]) if len(sys.argv) > 1 else 8077
+    host = sys.argv[2] if len(sys.argv) > 2 else '127.0.0.1'   # 0.0.0.0 = reachable from other devices on your network
     os.chdir(os.path.dirname(os.path.abspath(__file__)))
-    print(f'Radioport on http://localhost:{port}')
-    ThreadingHTTPServer(('127.0.0.1', port), H).serve_forever()
+    print(f'Radioport on http://localhost:{port}' + (f'  (listening on {host})' if host != '127.0.0.1' else ''))
+    ThreadingHTTPServer((host, port), H).serve_forever()
