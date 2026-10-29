@@ -3,7 +3,11 @@
 <p align="center">
   <img src="docs/img/demo.gif" alt="Radioport: switching stations" width="340">
   &nbsp;
-  <img src="docs/img/mobile.png" alt="Radioport on a phone" width="170">
+  <img src="docs/img/mobile.png" alt="Radioport on a phone" width="220">
+</p>
+
+<p align="center">
+  <img src="docs/img/desktop-full.jpg" alt="Radioport on a 1080p monitor" width="720">
 </p>
 
 > **EN:** An unofficial, fan-made web player that recreates the RADIOPORT screen from *Cyberpunk 2077*
