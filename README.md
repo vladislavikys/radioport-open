@@ -8,8 +8,8 @@
 
 > **EN:** An unofficial, fan-made web player that recreates the RADIOPORT screen from *Cyberpunk 2077*
 > (14 stations, live-schedule playback, DJ voice lines, stats, phone and gamepad support).
-> This repository contains **code and extraction scripts only**. No game music, voices, logos or fonts are included
-> or linked. You rebuild them yourself from **your own legally purchased copy** of the game with `pipeline/`
+> This repository contains **code and extraction scripts only**. No game music, voices, logo files or fonts are included
+> or linked (the screenshots above only show the interface). You rebuild them yourself from **your own legally purchased copy** of the game with `pipeline/`
 > (see [Сборка ассетов](#сборка-ассетов-из-игры) and [docs/PIPELINE.md](docs/PIPELINE.md)).
 > Not affiliated with or endorsed by CD PROJEKT RED. *Cyberpunk 2077* is a trademark of CD PROJEKT S.A.
 > Code is MIT-licensed; game assets belong to their owners. Do not publish the built site.
