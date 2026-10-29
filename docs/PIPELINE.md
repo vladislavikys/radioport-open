@@ -1,5 +1,7 @@
 # Как данные добываются из игры
 
+> Все шаги ниже выполняет `py build.py` в корне репозитория. Этот документ объясняет, что происходит внутри.
+
 Все пути ниже заданы переменными: `GAME` = папка игры, `WORK` = рабочая папка (`work/`), `SITE` = `site/`.
 Архивы лежат в `GAME\archive\pc\content\`. Для краткости `WK` = `WolvenKit.CLI.exe`, `V` = `vgmstream-cli.exe`.
 
@@ -43,7 +45,7 @@
 5. **Громкость.** `py pipeline/loudness.py` замеряет интегральную громкость (ffmpeg `ebur128`) в `loudness.json`.
    `build_data.py` берёт 20-й перцентиль как цель и пишет для каждой песни поправку `g` в дБ (только приглушение,
    потому что громкость элемента `<audio>` не поднимается выше 1).
-6. **Данные сайта.** Скопируй манифесты из `pipeline/data/` в `WORK`, затем `py pipeline/build_data.py` пишет `site/data/tracks.js`.
+6. **Данные сайта.** `py pipeline/build_data.py` берёт манифесты из `pipeline/data/` и пишет `site/data/tracks.js`.
 7. **DJ-реплики.** Субтитры лежат в `lang_en_text.archive` (`subtitles\media\radio\radio_01_conspiracy.json`, `radio_growl.json`),
    `stringId` в hex совпадает с суффиксом имени wem. Голос Max Mike в `audio_1_general.archive` (`vo\radio_max_mike*`),
    Эша в `lang_en_voice.archive` (`vo\ash_radio_growl*`). `py pipeline/build_dj.py` приводит их к уровню музыки (loudnorm)

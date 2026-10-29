@@ -1,5 +1,5 @@
-import sys; sys.path.insert(0, r"C:\CP2077Radio\work")
-import struct, re, json, bnk
+import os, struct, re, json, bnk
+from config import WORK
 
 def fnv(s):
     h = 2166136261
@@ -8,11 +8,11 @@ def fnv(s):
     return h
 
 names = {}
-raw = open(r"C:\CP2077Radio\work\raw\base\sound\event\eventsmetadata.json", 'rb').read()
+raw = open(os.path.join(WORK, "raw", "base", "sound", "event", "eventsmetadata.json"), 'rb').read()
 for m in set(re.findall(rb"[A-Za-z0-9_]{4,100}", raw)):
     names[fnv(m.decode())] = m.decode()
 
-d, s = bnk.parse(r"C:\CP2077Radio\work\raw\base\sound\soundbanks\radio.bnk")
+d, s = bnk.parse(os.path.join(WORK, "raw", "base", "sound", "soundbanks", "radio.bnk"))
 H = bnk.hirc(d, s)
 byid = {i: (t, b) for t, i, b in H}
 u32 = lambda b: set(struct.unpack_from('<I', b, k)[0] for k in range(len(b) - 3))
@@ -43,7 +43,7 @@ for p, sg in pls.items():
 for e, ids in ev.items():
     tg = [acts[a][2] for a in ids if a in acts]
     out['events'][e] = {'name': names.get(e), 'targets': tg}
-json.dump(out, open(r"C:\CP2077Radio\work\radio_map.json", 'w'), indent=1)
+json.dump(out, open(os.path.join(WORK, "radio_map.json"), 'w'), indent=1)
 print('tracks', len(tracks), 'segs', len(segs), 'playlists', len(pls))
 for p, v in out['playlists'].items():
     print(p, v['name'], v['segments'], len(v['sources']))

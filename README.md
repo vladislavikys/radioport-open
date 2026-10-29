@@ -14,7 +14,8 @@
 > (14 stations, live-schedule playback, DJ voice lines, stats, phone and gamepad support).
 > This repository contains **code and extraction scripts only**. No game music, voices, logo files or fonts are included
 > or linked (the screenshots above only show the interface). You rebuild them yourself from **your own legally purchased copy** of the game with `pipeline/`
-> (see [Сборка ассетов](#сборка-ассетов-из-игры) and [docs/PIPELINE.md](docs/PIPELINE.md)).
+> with one command: `py build.py --game "D:\Games\Cyberpunk 2077"`
+> (see [Сборка ассетов](#сборка-ассетов-из-игры)).
 > Not affiliated with or endorsed by CD PROJEKT RED. *Cyberpunk 2077* is a trademark of CD PROJEKT S.A.
 > Code is MIT-licensed; game assets belong to their owners. Do not publish the built site.
 > Requires Python 3, ffmpeg, WolvenKit CLI, vgmstream-cli.
@@ -70,12 +71,18 @@ py site/serve.py 8077        # или site\start.bat на Windows
 В репозитории нет игровых файлов. Их нужно получить из установленной игры (проверено на версии 2.31 с Phantom Liberty).
 
 1. Установи инструменты: [WolvenKit CLI](https://github.com/WolvenKit/WolvenKit/releases) (9.1.0), [vgmstream-cli](https://github.com/vgmstream/vgmstream/releases), `ffmpeg` в PATH, Python 3.
-2. Задай пути: переменные `CP2077_GAME` (папка игры) и `WOLVENKIT` для `pipeline/extract_assets.py`, в остальных скриптах поправь константы в начале (`D:\Games\Cyberpunk 2077`, `C:\CP2077Radio`).
-3. Логотипы, шрифты и иконки:
+   WolvenKit и vgmstream можно положить в `tools/wolvenkit/` и `tools/vgmstream/`, тогда их найдёт сам скрипт.
+2. Запусти сборку одной командой (путь к игре сохранится в `config.json`):
    ```bash
-   py pipeline/extract_assets.py
+   py build.py --game "D:\Games\Cyberpunk 2077"
    ```
-4. Музыка, названия, громкость, DJ-реплики, звуки меню: подробно в [docs/PIPELINE.md](docs/PIPELINE.md).
+   Если чего-то не хватает, скрипт напишет, что именно и где скачать. Готовые шаги пропускаются, поэтому после сбоя
+   просто запусти его ещё раз. Повторить один шаг: `py build.py --force dj`. Шаги: `wem`, `audio`, `loudness`, `data`, `dj`, `sfx`, `assets`.
+   Полная сборка идёт около 20 минут, почти всё время уходит на перекодирование песен в mp3.
+3. Запусти сайт: `py site/serve.py 8077`.
+
+Пути можно задать и без аргументов: скопируй `config.example.json` в `config.json` и поправь его.
+Как устроены данные в архивах игры: [docs/PIPELINE.md](docs/PIPELINE.md).
 
 Что получается на выходе, в `site/` (всё в `.gitignore`): `audio/` (mp3 песен), `dj/` (реплики диджеев), `sfx/` (звуки меню), `img/` (логотипы), `fonts/`, `icons/`, `data/tracks.js` и `data/dj.js`.
 
@@ -96,6 +103,7 @@ pipeline/             скрипты извлечения данных из иг
   convert.py          wem → mp3
   build_data.py       собирает site/data/tracks.js (+ громкость)
   build_dj.py         реплики диджеев → site/dj и data/dj.js
+  config.py           общие пути и инструменты (config.json или переменные окружения)
   loudness.py         замер громкости песен
   uitree.py, extract_ui.py   звуки меню из .opuspak
   extract_assets.py   логотипы, шрифты, иконки

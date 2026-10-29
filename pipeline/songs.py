@@ -1,12 +1,10 @@
 """radio.bnk -> songs.json: for every music event `mus_radio_NN_<name>` find the Wwise segment, its track and
 the streamed wem id(s).  Needs map.py to have produced radio_map.json first."""
 import sys, os, json, struct
-sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 import bnk
-
-WORK = os.environ.get("CP2077_WORK", r"C:\CP2077Radio\work")
+from config import WORK
 m = json.load(open(os.path.join(WORK, "radio_map.json")))
-d, s = bnk.parse(os.path.join(WORK, r"raw\base\sound\soundbanks\radio.bnk"))
+d, s = bnk.parse(os.path.join(WORK, "raw", "base", "sound", "soundbanks", "radio.bnk"))
 H = bnk.hirc(d, s)
 byid = {i: (t, b) for t, i, b in H}
 tracks = {i: struct.unpack_from("<I", b, 10)[0] for t, i, b in H if t == 11}   # music track -> first source id

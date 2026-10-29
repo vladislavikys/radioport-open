@@ -1,5 +1,5 @@
-import sys; sys.path.insert(0, r"C:\CP2077Radio\work")
-import struct, bnk, collections, json
+import os, struct, bnk, collections, json
+from config import WORK
 
 def fnv(s):
     h = 2166136261
@@ -7,7 +7,7 @@ def fnv(s):
         h = ((h * 16777619) & 0xFFFFFFFF) ^ c
     return h
 
-d, s = bnk.parse(r'C:\CP2077Radio\work\banks\base\sound\soundbanks\sfx_container.bnk')
+d, s = bnk.parse(os.path.join(WORK, 'banks', 'base', 'sound', 'soundbanks', 'sfx_container.bnk'))
 H = bnk.hirc(d, s)
 byid = {i: (t, b) for t, i, b in H}
 CONT = {i for t, i, b in H if t in (5, 6, 7, 9)}        # random/seq, switch, actor-mixer, layer
@@ -40,4 +40,4 @@ for n in ['ui_radio_select_channel', 'ui_radio_turn_on', 'ui_radio_turn_off', 'u
     for x in tg: L += leaves(x)
     res[n] = L
     print(n, 'targets', [(x, byid[x][0] if x in byid else None) for x in tg], 'leaves', len(L), L[:4])
-json.dump(res, open(r'C:\CP2077Radio\work\ui_events.json', 'w'))
+json.dump(res, open(os.path.join(WORK, 'ui_events.json'), 'w'))

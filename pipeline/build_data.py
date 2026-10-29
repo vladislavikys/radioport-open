@@ -1,6 +1,7 @@
-import json, re, collections
+import json, os, re, collections
+from config import DATA, WORK, SITE
 
-T = json.load(open(r'C:\CP2077Radio\work\tracks3.json', encoding='utf8'))
+T = json.load(open(os.path.join(DATA, 'tracks_manifest.json'), encoding='utf8'))
 
 # station number (from event names) -> station
 ST = [
@@ -31,8 +32,8 @@ MANUAL = {
 
 # loudness match: element volume can only go down, so every song is attenuated to the level of a
 # fairly quiet one (20th percentile); quieter songs stay as they are
-import os
-LUFS = json.load(open(r'C:\CP2077Radio\work\loudness.json')) if os.path.exists(r'C:\CP2077Radio\work\loudness.json') else {}
+_lufs = os.path.join(WORK, 'loudness.json')
+LUFS = json.load(open(_lufs if os.path.exists(_lufs) else os.path.join(DATA, 'loudness.json')))
 _vals = sorted(v[0] for v in LUFS.values())
 TARGET = _vals[len(_vals) // 5] if _vals else None
 def gain_db(f):
@@ -68,7 +69,8 @@ for sid, name, freq, logo, _ in ST:
         'blips': blips.get(sid, []),
     })
 js = 'window.STATIONS = ' + json.dumps(out, ensure_ascii=False, separators=(',', ':')) + ';\n'
-open(r'C:\CP2077Radio\site\data\tracks.js', 'w', encoding='utf8').write(js)
+os.makedirs(os.path.join(SITE, 'data'), exist_ok=True)
+open(os.path.join(SITE, 'data', 'tracks.js'), 'w', encoding='utf8').write(js)
 print('loudness target (LUFS):', TARGET, '| tracks with attenuation:', sum(1 for s in out for t in s['tracks'] if t['g'] < 0))
 for s in out:
     print(s['freq'], s['name'], len(s['tracks']), 'tracks', len(s['blips']), 'blips', round(sum(x['d'] for x in s['tracks']) / 60), 'min')

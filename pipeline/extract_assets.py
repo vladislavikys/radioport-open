@@ -4,15 +4,14 @@ PWA icons and the "MY MIX" logo.
 
     py extract_assets.py [--out <site dir>]
 
-Environment: CP2077_GAME (game folder), WOLVENKIT (path to WolvenKit.CLI.exe). Needs ffmpeg on PATH.
+Paths and tools come from config.py (config.json in the repo root, or environment variables).
 """
 import argparse, json, os, shutil, struct, subprocess, sys, tempfile
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 ROOT = os.path.dirname(HERE)
-GAME = os.environ.get("CP2077_GAME", r"D:\Games\Cyberpunk 2077")
-WK = os.environ.get("WOLVENKIT", os.path.join(ROOT, "tools", "wolvenkit", "WolvenKit.CLI.exe"))
-ARCHIVES = [os.path.join(GAME, "archive", "pc", "content", n) for n in ("basegame_1_engine.archive", "basegame_4_gamedata.archive")]
+from config import GAME, WK, SITE, archive
+ARCHIVES = [archive(n) for n in ("basegame_1_engine.archive", "basegame_4_gamedata.archive")]
 
 # atlas part name in the game -> file name used by the site
 LOGOS = {"30_principales": "30_principales", "body_heat": "body_heat", "dark_star": "dark_star", "growl_fm": "growl_fm",
@@ -28,7 +27,7 @@ def run(*a):
     return r.stdout
 
 def main():
-    ap = argparse.ArgumentParser(); ap.add_argument("--out", default=os.path.join(ROOT, "site")); a = ap.parse_args()
+    ap = argparse.ArgumentParser(); ap.add_argument("--out", default=SITE); a = ap.parse_args()
     out = a.out
     for d in ("img", "fonts", "icons"): os.makedirs(os.path.join(out, d), exist_ok=True)
     tmp = tempfile.mkdtemp(prefix="cp2077_assets_")

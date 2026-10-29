@@ -19,3 +19,5 @@ __pycache__/
 *.opuspak
 *.archive
 *.log
+
+config.json

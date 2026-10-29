@@ -1,11 +1,11 @@
 import json, re, os, subprocess, glob, collections
+from config import WORK, SITE, VGM as V, FFMPEG, FFPROBE
 
-V = r'C:\CP2077Radio\tools\vgmstream\vgmstream-cli.exe'
-OUT = r'C:\CP2077Radio\site\dj'
-TMP = r'C:\CP2077Radio\work\dj_tmp.wav'
+OUT = os.path.join(SITE, 'dj')
+TMP = os.path.join(WORK, 'dj_tmp.wav')
 os.makedirs(OUT, exist_ok=True)
 
-src = open(r'C:\CP2077Radio\site\data\tracks.js', encoding='utf8').read()
+src = open(os.path.join(SITE, 'data', 'tracks.js'), encoding='utf8').read()
 S = json.loads(src[src.index('=') + 1:].strip().rstrip(';'))
 norm = lambda s: re.sub(r'[^a-z0-9]', '', s.lower())
 by_title = collections.defaultdict(list)
@@ -17,21 +17,21 @@ def entries(path):
     return json.load(open(path, encoding='utf8'))['Data']['RootChunk']['root']['Data']['entries']
 
 def wem_for(h, pat):
-    m = glob.glob(rf'C:\CP2077Radio\work\dj\**\{pat}*_{h}.wem', recursive=True)
+    m = glob.glob(os.path.join(WORK, 'dj', '**', f'{pat}*_{h}.wem'), recursive=True)
     return m[0] if m else None
 
 def to_mp3(wem, name):
     mp3 = os.path.join(OUT, name + '.mp3')
     # voice clips are mixed far below the music in the game files: bring them to music level
     subprocess.run([V, '-o', TMP, wem], check=True, capture_output=True)
-    subprocess.run(['ffmpeg', '-y', '-loglevel', 'error', '-i', TMP, '-af', 'loudnorm=I=-11:TP=-0.5:LRA=6', '-ar', '44100', '-codec:a', 'libmp3lame', '-q:a', '3', mp3], check=True)
-    r = subprocess.run(['ffprobe', '-v', 'error', '-show_entries', 'format=duration', '-of', 'csv=p=0', mp3], capture_output=True, text=True).stdout
+    subprocess.run([FFMPEG, '-y', '-loglevel', 'error', '-i', TMP, '-af', 'loudnorm=I=-11:TP=-0.5:LRA=6', '-ar', '44100', '-codec:a', 'libmp3lame', '-q:a', '3', mp3], check=True)
+    r = subprocess.run([FFPROBE, '-v', 'error', '-show_entries', 'format=duration', '-of', 'csv=p=0', mp3], capture_output=True, text=True).stdout
     return float(r)
 
 # A: Max Mike song intros / outros
 songs = collections.defaultdict(lambda: {'intro': [], 'outro': []})
 n_mm = 0
-for e in entries(r'C:\CP2077Radio\work\subjson\radio_01_conspiracy.json.json'):
+for e in entries(os.path.join(WORK, 'subjson', 'radio_01_conspiracy.json.json')):
     h = format(int(e['stringId']), 'x').zfill(16); t = e['femaleVariant']
     hit = None
     for q in re.findall(r'["\u201c]([^"\u201d]+)["\u201d]', t):
@@ -48,7 +48,7 @@ for e in entries(r'C:\CP2077Radio\work\subjson\radio_01_conspiracy.json.json'):
 # B: Ash (Growl FM) self-contained lines
 BAD_START = re.compile(r"^(and|but|or|so|yeah|well|then|plus|because|'cause|\u2019cause|cause|which|that|if|now|also|anyway|still|ok|okay|right)\b", re.I)
 ash = []
-for e in entries(r'C:\CP2077Radio\work\subjson\radio_growl.json.json'):
+for e in entries(os.path.join(WORK, 'subjson', 'radio_growl.json.json')):
     h = format(int(e['stringId']), 'x').zfill(16); t = (e['femaleVariant'] or '').strip()
     if len(t) < 28 or BAD_START.match(t.lstrip('"\u201c\u2018\'')) or not re.search(r'[.!?\u2026"\u201d]$', t): continue
     w = wem_for(h, 'ash_radio_growl')
@@ -58,10 +58,10 @@ for e in entries(r'C:\CP2077Radio\work\subjson\radio_growl.json.json'):
     ash.append({'f': 'dj/ash_' + h + '.mp3', 'd': round(d, 1), 't': t})
 
 js = 'window.DJ = ' + json.dumps({'songs': songs, 'ash': ash}, ensure_ascii=False, separators=(',', ':')) + ';\n'
-open(r'C:\CP2077Radio\site\data\dj.js', 'w', encoding='utf8').write(js)
+open(os.path.join(SITE, 'data', 'dj.js'), 'w', encoding='utf8').write(js)
 if os.path.exists(TMP): os.remove(TMP)
 print('Max Mike lines used:', n_mm, '| songs covered:', len(songs), '| Ash lines kept:', len(ash))
-tot = sum(os.path.getsize(p) for p in glob.glob(OUT + r'\*.mp3'))
+tot = sum(os.path.getsize(p) for p in glob.glob(os.path.join(OUT, '*.mp3')))
 print('dj folder MB:', round(tot / 1048576, 1))
 for f, v in list(songs.items())[:6]:
     print(' ', f, 'intro', len(v['intro']), 'outro', len(v['outro']))
