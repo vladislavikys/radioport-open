@@ -1,0 +1,2036 @@
+[
+ {
+  "event": "mus_radio_01_att_rock_black_dog",
+  "station": "01",
+  "rest": "att_rock_black_dog",
+  "wem": 847868585,
+  "file": "01_att_rock_black_dog.mp3",
+  "duration": 262.5,
+  "title": "Samurai - Black Dog"
+ },
+ {
+  "event": "mus_radio_01_att_rock_chippin_in",
+  "station": "01",
+  "rest": "att_rock_chippin_in",
+  "wem": 67866068,
+  "file": "01_att_rock_chippin_in.mp3",
+  "duration": 214.5,
+  "title": "Samurai - Chippin' In"
+ },
+ {
+  "event": "mus_radio_01_att_rock_friday_night_fire_night",
+  "station": "01",
+  "rest": "att_rock_friday_night_fire_night",
+  "wem": 534318699,
+  "file": "01_att_rock_friday_night_fire_night.mp3",
+  "duration": 214.1,
+  "title": "The Rubicones - Friday Night Fire Fight"
+ },
+ {
+  "event": "mus_radio_01_att_rock_heaven_ho",
+  "station": "01",
+  "rest": "att_rock_heaven_ho",
+  "wem": 239971311,
+  "file": "01_att_rock_heaven_ho.mp3",
+  "duration": 184.0,
+  "title": "XerzeX - Heave Ho"
+ },
+ {
+  "event": "mus_radio_01_att_rock_i_will_follow",
+  "station": "01",
+  "rest": "att_rock_i_will_follow",
+  "wem": 216269337,
+  "file": "01_att_rock_i_will_follow.mp3",
+  "duration": 158.3,
+  "title": "Beached Tarantula - I Will Follow"
+ },
+ {
+  "event": "mus_radio_01_att_rock_mstr01",
+  "station": "01",
+  "rest": "att_rock_mstr01",
+  "wem": 82962273,
+  "file": "01_att_rock_mstr01.mp3",
+  "duration": 190.5,
+  "title": null
+ },
+ {
+  "event": "mus_radio_01_att_rock_never_fade_away",
+  "station": "01",
+  "rest": "att_rock_never_fade_away",
+  "wem": 230331069,
+  "file": "01_att_rock_never_fade_away.mp3",
+  "duration": 189.0,
+  "title": "Samurai - Never Fade Away"
+ },
+ {
+  "event": "mus_radio_01_att_rock_no_convenient_apocalypse",
+  "station": "01",
+  "rest": "att_rock_no_convenient_apocalypse",
+  "wem": 826126133,
+  "file": "01_att_rock_no_convenient_apocalypse.mp3",
+  "duration": 193.9,
+  "title": "Krushchev's Ghosts - No Convenient Apocalypse"
+ },
+ {
+  "event": "mus_radio_01_att_rock_suffer_me",
+  "station": "01",
+  "rest": "att_rock_suffer_me",
+  "wem": 360407664,
+  "file": "01_att_rock_suffer_me.mp3",
+  "duration": 163.5,
+  "title": "Brutus Backlash - SufferMe"
+ },
+ {
+  "event": "mus_radio_01_att_rock_the_ballad",
+  "station": "01",
+  "rest": "att_rock_the_ballad",
+  "wem": 336551383,
+  "file": "01_att_rock_the_ballad.mp3",
+  "duration": 266.8,
+  "title": "Samurai - The Ballad of Buck Ravers"
+ },
+ {
+  "event": "mus_radio_01_att_rock_trauma",
+  "station": "01",
+  "rest": "att_rock_trauma",
+  "wem": 146627573,
+  "file": "01_att_rock_trauma.mp3",
+  "duration": 188.4,
+  "title": "The Rubicones - Trauma"
+ },
+ {
+  "event": "mus_radio_01_attrock_likewise",
+  "station": "01",
+  "rest": "attrock_likewise",
+  "wem": 92260188,
+  "file": "01_attrock_likewise.mp3",
+  "duration": 123.0,
+  "title": "IBDY - LikeWise"
+ },
+ {
+  "event": "mus_radio_01_attrock_so_it_goes",
+  "station": "01",
+  "rest": "attrock_so_it_goes",
+  "wem": 533813975,
+  "file": "01_attrock_so_it_goes.mp3",
+  "duration": 252.2,
+  "title": "Fingers and the Outlaws - So It Goes"
+ },
+ {
+  "event": "mus_radio_01_attrock_summer_of_2069",
+  "station": "01",
+  "rest": "attrock_summer_of_2069",
+  "wem": 395305747,
+  "file": "01_attrock_summer_of_2069.mp3",
+  "duration": 185.0,
+  "title": "Blood And Ice - Summer of 2069"
+ },
+ {
+  "event": "mus_radio_01_attrock_to_the_fullest",
+  "station": "01",
+  "rest": "attrock_to_the_fullest",
+  "wem": 521529624,
+  "file": "01_attrock_to_the_fullest.mp3",
+  "duration": 93.6,
+  "title": "Artificial Kids - To The Fullest"
+ },
+ {
+  "event": "mus_radio_01_attrock_whos_ready",
+  "station": "01",
+  "rest": "attrock_whos_ready",
+  "wem": 688358243,
+  "file": "01_attrock_whos_ready.mp3",
+  "duration": 105.5,
+  "title": "IBDY - Who's Ready For Tomorrow"
+ },
+ {
+  "event": "mus_radio_02_aggro_ind_black_terminal_vox_upgrade",
+  "station": "02",
+  "rest": "aggro_ind_black_terminal_vox_upgrade",
+  "wem": 1065746543,
+  "file": "02_aggro_ind_black_terminal_vox_upgrade.mp3",
+  "duration": 175.2,
+  "title": "Upgrade - Black Terminal"
+ },
+ {
+  "event": "mus_radio_02_aggro_ind_blips_01",
+  "station": "02",
+  "rest": "aggro_ind_blips_01",
+  "wem": 130404871,
+  "file": "02_aggro_ind_blips_01.mp3",
+  "duration": 5.7,
+  "title": null
+ },
+ {
+  "event": "mus_radio_02_aggro_ind_blips_01_alt",
+  "station": "02",
+  "rest": "aggro_ind_blips_01_alt",
+  "wem": 885647302,
+  "file": "02_aggro_ind_blips_01_alt.mp3",
+  "duration": 7.6,
+  "title": null
+ },
+ {
+  "event": "mus_radio_02_aggro_ind_blips_02",
+  "station": "02",
+  "rest": "aggro_ind_blips_02",
+  "wem": 339209955,
+  "file": "02_aggro_ind_blips_02.mp3",
+  "duration": 7.1,
+  "title": null
+ },
+ {
+  "event": "mus_radio_02_aggro_ind_blips_03",
+  "station": "02",
+  "rest": "aggro_ind_blips_03",
+  "wem": 938562027,
+  "file": "02_aggro_ind_blips_03.mp3",
+  "duration": 9.0,
+  "title": null
+ },
+ {
+  "event": "mus_radio_02_aggro_ind_comeclose",
+  "station": "02",
+  "rest": "aggro_ind_comeclose",
+  "wem": 303931745,
+  "file": "02_aggro_ind_comeclose.mp3",
+  "duration": 193.8,
+  "title": "Keine - Come Close"
+ },
+ {
+  "event": "mus_radio_02_aggro_ind_cyber_tabla",
+  "station": "02",
+  "rest": "aggro_ind_cyber_tabla",
+  "wem": 420329756,
+  "file": "02_aggro_ind_cyber_tabla.mp3",
+  "duration": 251.3,
+  "title": "Tainted Overlord - A Caça"
+ },
+ {
+  "event": "mus_radio_02_aggro_ind_dead_pilot",
+  "station": "02",
+  "rest": "aggro_ind_dead_pilot",
+  "wem": 409198739,
+  "file": "02_aggro_ind_dead_pilot.mp3",
+  "duration": 190.1,
+  "title": "Keine - Dead Pilot"
+ },
+ {
+  "event": "mus_radio_02_aggro_ind_kill_the_messenger",
+  "station": "02",
+  "rest": "aggro_ind_kill_the_messenger",
+  "wem": 525137074,
+  "file": "02_aggro_ind_kill_the_messenger.mp3",
+  "duration": 208.7,
+  "title": "The Cartesian Duelists - Kill the Messenger"
+ },
+ {
+  "event": "mus_radio_02_aggro_ind_makes_me_feel_better",
+  "station": "02",
+  "rest": "aggro_ind_makes_me_feel_better",
+  "wem": 66952680,
+  "file": "02_aggro_ind_makes_me_feel_better.mp3",
+  "duration": 286.5,
+  "title": "Slavoj McAllister - Makes Me Feel Better"
+ },
+ {
+  "event": "mus_radio_02_aggro_ind_never_stop_me",
+  "station": "02",
+  "rest": "aggro_ind_never_stop_me",
+  "wem": 811249141,
+  "file": "02_aggro_ind_never_stop_me.mp3",
+  "duration": 220.5,
+  "title": "Den of Degenerates - Never Stop Me"
+ },
+ {
+  "event": "mus_radio_02_aggro_ind_night_city_aliens",
+  "station": "02",
+  "rest": "aggro_ind_night_city_aliens",
+  "wem": 86209634,
+  "file": "02_aggro_ind_night_city_aliens.mp3",
+  "duration": 198.6,
+  "title": "Homeschool Dropouts - Night City Aliens"
+ },
+ {
+  "event": "mus_radio_02_aggro_ind_pain",
+  "station": "02",
+  "rest": "aggro_ind_pain",
+  "wem": 365987976,
+  "file": "02_aggro_ind_pain.mp3",
+  "duration": 204.9,
+  "title": "The Red Glare - Pain"
+ },
+ {
+  "event": "mus_radio_02_aggro_ind_pig_dinner",
+  "station": "02",
+  "rest": "aggro_ind_pig_dinner",
+  "wem": 874085468,
+  "file": "02_aggro_ind_pig_dinner.mp3",
+  "duration": 284.0,
+  "title": "N1v3Z - Pig Dinner"
+ },
+ {
+  "event": "mus_radio_02_aggro_ind_reaktion",
+  "station": "02",
+  "rest": "aggro_ind_reaktion",
+  "wem": 49937168,
+  "file": "02_aggro_ind_reaktion.mp3",
+  "duration": 213.6,
+  "title": "Alexei Brayko - Reaktion"
+ },
+ {
+  "event": "mus_radio_02_aggro_ind_resist_and_disorder",
+  "station": "02",
+  "rest": "aggro_ind_resist_and_disorder",
+  "wem": 308480891,
+  "file": "02_aggro_ind_resist_and_disorder.mp3",
+  "duration": 253.0,
+  "title": "The Cartesian Duelists - Resist and Disorder"
+ },
+ {
+  "event": "mus_radio_02_aggro_ind_violence",
+  "station": "02",
+  "rest": "aggro_ind_violence",
+  "wem": 588422768,
+  "file": "02_aggro_ind_violence.mp3",
+  "duration": 204.2,
+  "title": "The Red Glare - Violence"
+ },
+ {
+  "event": "mus_radio_02_aggro_ind_with_her",
+  "station": "02",
+  "rest": "aggro_ind_with_her",
+  "wem": 257784898,
+  "file": "02_aggro_ind_with_her.mp3",
+  "duration": 210.5,
+  "title": "Ego Affliction - With Her"
+ },
+ {
+  "event": "mus_radio_02_aggroind_cyber_caca",
+  "station": "02",
+  "rest": "aggroind_cyber_caca",
+  "wem": 50379518,
+  "file": "02_aggroind_cyber_caca.mp3",
+  "duration": 378.2,
+  "title": null
+ },
+ {
+  "event": "mus_radio_03_elec_ind_blips_01",
+  "station": "03",
+  "rest": "elec_ind_blips_01",
+  "wem": 259224498,
+  "file": "03_elec_ind_blips_01.mp3",
+  "duration": 6.1,
+  "title": null
+ },
+ {
+  "event": "mus_radio_03_elec_ind_blips_01_alt",
+  "station": "03",
+  "rest": "elec_ind_blips_01_alt",
+  "wem": 236812550,
+  "file": "03_elec_ind_blips_01_alt.mp3",
+  "duration": 6.1,
+  "title": null
+ },
+ {
+  "event": "mus_radio_03_elec_ind_blips_02",
+  "station": "03",
+  "rest": "elec_ind_blips_02",
+  "wem": 818146679,
+  "file": "03_elec_ind_blips_02.mp3",
+  "duration": 6.1,
+  "title": null
+ },
+ {
+  "event": "mus_radio_03_elec_ind_blips_02_alt",
+  "station": "03",
+  "rest": "elec_ind_blips_02_alt",
+  "wem": 837456452,
+  "file": "03_elec_ind_blips_02_alt.mp3",
+  "duration": 6.1,
+  "title": null
+ },
+ {
+  "event": "mus_radio_03_elec_ind_blips_03",
+  "station": "03",
+  "rest": "elec_ind_blips_03",
+  "wem": 124957938,
+  "file": "03_elec_ind_blips_03.mp3",
+  "duration": 11.3,
+  "title": null
+ },
+ {
+  "event": "mus_radio_03_elec_ind_dirty_roses",
+  "station": "03",
+  "rest": "elec_ind_dirty_roses",
+  "wem": 664992914,
+  "file": "03_elec_ind_dirty_roses.mp3",
+  "duration": 211.0,
+  "title": "Perilous Futur - Dirty Roses"
+ },
+ {
+  "event": "mus_radio_03_elec_ind_flying_heads",
+  "station": "03",
+  "rest": "elec_ind_flying_heads",
+  "wem": 710361138,
+  "file": "03_elec_ind_flying_heads.mp3",
+  "duration": 223.5,
+  "title": "Ashes Potts - FLYINGHEAD"
+ },
+ {
+  "event": "mus_radio_03_elec_ind_killkill",
+  "station": "03",
+  "rest": "elec_ind_killkill",
+  "wem": 84073683,
+  "file": "03_elec_ind_killkill.mp3",
+  "duration": 202.2,
+  "title": "The Bait - KILLKILL"
+ },
+ {
+  "event": "mus_radio_03_elec_ind_maniak",
+  "station": "03",
+  "rest": "elec_ind_maniak",
+  "wem": 592937823,
+  "file": "03_elec_ind_maniak.mp3",
+  "duration": 153.3,
+  "title": "Doctor Berserk - Maniak"
+ },
+ {
+  "event": "mus_radio_03_elec_ind_neuron",
+  "station": "03",
+  "rest": "elec_ind_neuron",
+  "wem": 805938280,
+  "file": "03_elec_ind_neuron.mp3",
+  "duration": 123.3,
+  "title": "Guilt Code - neuron"
+ },
+ {
+  "event": "mus_radio_03_elec_ind_ppgame05",
+  "station": "03",
+  "rest": "elec_ind_ppgame05",
+  "wem": 521364565,
+  "file": "03_elec_ind_ppgame05.mp3",
+  "duration": 278.0,
+  "title": null
+ },
+ {
+  "event": "mus_radio_03_elec_ind_ppgame18",
+  "station": "03",
+  "rest": "elec_ind_ppgame18",
+  "wem": 884931314,
+  "file": "03_elec_ind_ppgame18.mp3",
+  "duration": 150.0,
+  "title": null
+ },
+ {
+  "event": "mus_radio_03_elec_ind_run",
+  "station": "03",
+  "rest": "elec_ind_run",
+  "wem": 649255606,
+  "file": "03_elec_ind_run.mp3",
+  "duration": 255.4,
+  "title": "Kings of Collapse - RUN"
+ },
+ {
+  "event": "mus_radio_03_elec_ind_worlds",
+  "station": "03",
+  "rest": "elec_ind_worlds",
+  "wem": 188143271,
+  "file": "03_elec_ind_worlds.mp3",
+  "duration": 199.5,
+  "title": "The Unresolved - Worlds"
+ },
+ {
+  "event": "mus_radio_03_elec_ind_x",
+  "station": "03",
+  "rest": "elec_ind_x",
+  "wem": 52108015,
+  "file": "03_elec_ind_x.mp3",
+  "duration": 163.8,
+  "title": "The Unresolved - X"
+ },
+ {
+  "event": "mus_radio_03_elect_ind_brain_damaged",
+  "station": "03",
+  "rest": "elect_ind_brain_damaged",
+  "wem": 791114400,
+  "file": "03_elect_ind_brain_damaged.mp3",
+  "duration": 178.9,
+  "title": "Cyber Coorayber - Brain-Damaged"
+ },
+ {
+  "event": "mus_radio_03_electind_be_machine",
+  "station": "03",
+  "rest": "electind_be_machine",
+  "wem": 621649083,
+  "file": "03_electind_be_machine.mp3",
+  "duration": 217.0,
+  "title": "Generating Dependencies - Be Machine"
+ },
+ {
+  "event": "mus_radio_03_electind_cyberpunk03_",
+  "station": "03",
+  "rest": "electind_cyberpunk03_",
+  "wem": 783271344,
+  "file": "03_electind_cyberpunk03_.mp3",
+  "duration": 293.9,
+  "title": null
+ },
+ {
+  "event": "mus_radio_03_electind_cyberpunk07",
+  "station": "03",
+  "rest": "electind_cyberpunk07",
+  "wem": 239254618,
+  "file": "03_electind_cyberpunk07.mp3",
+  "duration": 217.0,
+  "title": null
+ },
+ {
+  "event": "mus_radio_03_electind_ppgame18",
+  "station": "03",
+  "rest": "electind_ppgame18",
+  "wem": 176501448,
+  "file": "03_electind_ppgame18.mp3",
+  "duration": 152.9,
+  "title": null
+ },
+ {
+  "event": "mus_radio_04_hiphop_bigger_man",
+  "station": "04",
+  "rest": "hiphop_bigger_man",
+  "wem": 305730733,
+  "file": "04_hiphop_bigger_man.mp3",
+  "duration": 203.0,
+  "title": "Droox - Bigger Man"
+ },
+ {
+  "event": "mus_radio_04_hiphop_blips_01",
+  "station": "04",
+  "rest": "hiphop_blips_01",
+  "wem": 789210352,
+  "file": "04_hiphop_blips_01.mp3",
+  "duration": 6.6,
+  "title": null
+ },
+ {
+  "event": "mus_radio_04_hiphop_blips_02",
+  "station": "04",
+  "rest": "hiphop_blips_02",
+  "wem": 53171054,
+  "file": "04_hiphop_blips_02.mp3",
+  "duration": 9.0,
+  "title": null
+ },
+ {
+  "event": "mus_radio_04_hiphop_blips_03",
+  "station": "04",
+  "rest": "hiphop_blips_03",
+  "wem": 994411021,
+  "file": "04_hiphop_blips_03.mp3",
+  "duration": 8.7,
+  "title": null
+ },
+ {
+  "event": "mus_radio_04_hiphop_blouses_blue",
+  "station": "04",
+  "rest": "hiphop_blouses_blue",
+  "wem": 777673336,
+  "file": "04_hiphop_blouses_blue.mp3",
+  "duration": 170.3,
+  "title": "NC3 - Blouses Blue"
+ },
+ {
+  "event": "mus_radio_04_hiphop_bruzez",
+  "station": "04",
+  "rest": "hiphop_bruzez",
+  "wem": 960655358,
+  "file": "04_hiphop_bruzez.mp3",
+  "duration": 176.3,
+  "title": "Knixit - Bruzez"
+ },
+ {
+  "event": "mus_radio_04_hiphop_ccc",
+  "station": "04",
+  "rest": "hiphop_ccc",
+  "wem": 304807830,
+  "file": "04_hiphop_ccc.mp3",
+  "duration": 226.0,
+  "title": "Cacimbo - CCC"
+ },
+ {
+  "event": "mus_radio_04_hiphop_ccc_flacko_loco",
+  "station": "04",
+  "rest": "hiphop_ccc_flacko_loco",
+  "wem": 344041802,
+  "file": "04_hiphop_ccc_flacko_loco.mp3",
+  "duration": 134.0,
+  "title": "TELO$ - Flacko Loco"
+ },
+ {
+  "event": "mus_radio_04_hiphop_clip_boss",
+  "station": "04",
+  "rest": "hiphop_clip_boss",
+  "wem": 101795579,
+  "file": "04_hiphop_clip_boss.mp3",
+  "duration": 177.6,
+  "title": "Sugarcoob feat. ANAK KONDA - Clip Boss"
+ },
+ {
+  "event": "mus_radio_04_hiphop_day_of_dead",
+  "station": "04",
+  "rest": "hiphop_day_of_dead",
+  "wem": 279160746,
+  "file": "04_hiphop_day_of_dead.mp3",
+  "duration": 185.4,
+  "title": "HAPS - Day of Dead"
+ },
+ {
+  "event": "mus_radio_04_hiphop_dishonor",
+  "station": "04",
+  "rest": "hiphop_dishonor",
+  "wem": 495804559,
+  "file": "04_hiphop_dishonor.mp3",
+  "duration": 195.5,
+  "title": "ICHIBANCHI - Dishonor"
+ },
+ {
+  "event": "mus_radio_04_hiphop_frost",
+  "station": "04",
+  "rest": "hiphop_frost",
+  "wem": 433713094,
+  "file": "04_hiphop_frost.mp3",
+  "duration": 178.9,
+  "title": "Yamete - Frost"
+ },
+ {
+  "event": "mus_radio_04_hiphop_go_blaze",
+  "station": "04",
+  "rest": "hiphop_go_blaze",
+  "wem": 216704447,
+  "file": "04_hiphop_go_blaze.mp3",
+  "duration": 188.0,
+  "title": "DNE feat. G'Natt - Go Blaze"
+ },
+ {
+  "event": "mus_radio_04_hiphop_goodmorn",
+  "station": "04",
+  "rest": "hiphop_goodmorn",
+  "wem": 466119236,
+  "file": "04_hiphop_goodmorn.mp3",
+  "duration": 197.7,
+  "title": "Pazoozu - Hello Good Morning"
+ },
+ {
+  "event": "mus_radio_04_hiphop_gr4ves",
+  "station": "04",
+  "rest": "hiphop_gr4ves",
+  "wem": 728377454,
+  "file": "04_hiphop_gr4ves.mp3",
+  "duration": 178.9,
+  "title": "Kyubik - GR4VES"
+ },
+ {
+  "event": "mus_radio_04_hiphop_hs_bully",
+  "station": "04",
+  "rest": "hiphop_hs_bully",
+  "wem": 384046700,
+  "file": "04_hiphop_hs_bully.mp3",
+  "duration": 181.8,
+  "title": "UMVN feat. Imp Ra - High School Bully"
+ },
+ {
+  "event": "mus_radio_04_hiphop_nbomdanalog",
+  "station": "04",
+  "rest": "hiphop_nbomdanalog",
+  "wem": 749562071,
+  "file": "04_hiphop_nbomdanalog.mp3",
+  "duration": 175.9,
+  "title": "DAPxFLEM - Nbomdanalog"
+ },
+ {
+  "event": "mus_radio_04_hiphop_no_save_point",
+  "station": "04",
+  "rest": "hiphop_no_save_point",
+  "wem": 595318736,
+  "file": "04_hiphop_no_save_point.mp3",
+  "duration": 172.0,
+  "title": "Yankee and the Brave - No Save Point"
+ },
+ {
+  "event": "mus_radio_04_hiphop_nose_bleed",
+  "station": "04",
+  "rest": "hiphop_nose_bleed",
+  "wem": 697396654,
+  "file": "04_hiphop_nose_bleed.mp3",
+  "duration": 186.0,
+  "title": "PeCero - Nose Bleed"
+ },
+ {
+  "event": "mus_radio_04_hiphop_plucku",
+  "station": "04",
+  "rest": "hiphop_plucku",
+  "wem": 921768250,
+  "file": "04_hiphop_plucku.mp3",
+  "duration": 201.6,
+  "title": "3xB feat. Gun-Fu - PLUCK U"
+ },
+ {
+  "event": "mus_radio_04_hiphop_problem_kids",
+  "station": "04",
+  "rest": "hiphop_problem_kids",
+  "wem": 422374976,
+  "file": "04_hiphop_problem_kids.mp3",
+  "duration": 166.9,
+  "title": "Young Kenny - Problem Kids"
+ },
+ {
+  "event": "mus_radio_04_hiphop_run_the_block",
+  "station": "04",
+  "rest": "hiphop_run_the_block",
+  "wem": 39020019,
+  "file": "04_hiphop_run_the_block.mp3",
+  "duration": 177.0,
+  "title": "Bez Tatami feat. Gully Foyle - Run The Block"
+ },
+ {
+  "event": "mus_radio_04_hiphop_suicide",
+  "station": "04",
+  "rest": "hiphop_suicide",
+  "wem": 706423871,
+  "file": "04_hiphop_suicide.mp3",
+  "duration": 225.1,
+  "title": "Code 137 - Suicide"
+ },
+ {
+  "event": "mus_radio_04_hiphop_the_god_machines",
+  "station": "04",
+  "rest": "hiphop_the_god_machines",
+  "wem": 660406395,
+  "file": "04_hiphop_the_god_machines.mp3",
+  "duration": 186.8,
+  "title": "Kill Trigger feat. Paul Senai, KaKow - The God Machines"
+ },
+ {
+  "event": "mus_radio_04_hiphop_warning_shots",
+  "station": "04",
+  "rest": "hiphop_warning_shots",
+  "wem": 761987513,
+  "file": "04_hiphop_warning_shots.mp3",
+  "duration": 174.0,
+  "title": "Laputan Machine - Warningshots"
+ },
+ {
+  "event": "mus_radio_04_hiphop_yugen_blakrok",
+  "station": "04",
+  "rest": "hiphop_yugen_blakrok",
+  "wem": 274367834,
+  "file": "04_hiphop_yugen_blakrok.mp3",
+  "duration": 247.0,
+  "title": null
+ },
+ {
+  "event": "mus_radio_05_pop_4aem",
+  "station": "05",
+  "rest": "pop_4aem",
+  "wem": 5020242,
+  "file": "05_pop_4aem.mp3",
+  "duration": 271.0,
+  "title": "Lizzy Wizzy - 4ÆM"
+ },
+ {
+  "event": "mus_radio_05_pop_blips_01",
+  "station": "05",
+  "rest": "pop_blips_01",
+  "wem": 679337608,
+  "file": "05_pop_blips_01.mp3",
+  "duration": 6.1,
+  "title": null
+ },
+ {
+  "event": "mus_radio_05_pop_blips_02",
+  "station": "05",
+  "rest": "pop_blips_02",
+  "wem": 936720723,
+  "file": "05_pop_blips_02.mp3",
+  "duration": 6.1,
+  "title": null
+ },
+ {
+  "event": "mus_radio_05_pop_blips_03",
+  "station": "05",
+  "rest": "pop_blips_03",
+  "wem": 915927353,
+  "file": "05_pop_blips_03.mp3",
+  "duration": 6.1,
+  "title": null
+ },
+ {
+  "event": "mus_radio_05_pop_cirque_du_soleil",
+  "station": "05",
+  "rest": "pop_cirque_du_soleil",
+  "wem": 903009003,
+  "file": "05_pop_cirque_du_soleil.mp3",
+  "duration": 142.3,
+  "title": "Neon Haze - Circus Minimus"
+ },
+ {
+  "event": "mus_radio_05_pop_crust_punk",
+  "station": "05",
+  "rest": "pop_crust_punk",
+  "wem": 949985077,
+  "file": "05_pop_crust_punk.mp3",
+  "duration": 156.0,
+  "title": "IBDY - Crustpunk"
+ },
+ {
+  "event": "mus_radio_05_pop_delicate_weapon",
+  "station": "05",
+  "rest": "pop_delicate_weapon",
+  "wem": 726229946,
+  "file": "05_pop_delicate_weapon.mp3",
+  "duration": 224.8,
+  "title": "Lizzy Wizzy - Delicate Weapon"
+ },
+ {
+  "event": "mus_radio_05_pop_heres_a_thought",
+  "station": "05",
+  "rest": "pop_heres_a_thought",
+  "wem": 575003013,
+  "file": "05_pop_heres_a_thought.mp3",
+  "duration": 112.8,
+  "title": "IBDY - Here's a Thought"
+ },
+ {
+  "event": "mus_radio_05_pop_history",
+  "station": "05",
+  "rest": "pop_history",
+  "wem": 941358832,
+  "file": "05_pop_history.mp3",
+  "duration": 200.5,
+  "title": "Trash Generation - History"
+ },
+ {
+  "event": "mus_radio_05_pop_hole_in_the_sun",
+  "station": "05",
+  "rest": "pop_hole_in_the_sun",
+  "wem": 698612311,
+  "file": "05_pop_hole_in_the_sun.mp3",
+  "duration": 206.2,
+  "title": "Point Break Candy - Hole In The Sun"
+ },
+ {
+  "event": "mus_radio_05_pop_i_want_to_stay_at_your_house",
+  "station": "05",
+  "rest": "pop_i_want_to_stay_at_your_house",
+  "wem": 717186759,
+  "file": "05_pop_i_want_to_stay_at_your_house.mp3",
+  "duration": 244.9,
+  "title": "Hallie Coggins - I Really Want To Stay At Your House"
+ },
+ {
+  "event": "mus_radio_05_pop_major_crimes",
+  "station": "05",
+  "rest": "pop_major_crimes",
+  "wem": 688260506,
+  "file": "05_pop_major_crimes.mp3",
+  "duration": 201.0,
+  "title": "Window Weather - Major Crimes"
+ },
+ {
+  "event": "mus_radio_05_pop_night_city",
+  "station": "05",
+  "rest": "pop_night_city",
+  "wem": 862539357,
+  "file": "05_pop_night_city.mp3",
+  "duration": 188.1,
+  "title": "Artemis Delta - Night City"
+ },
+ {
+  "event": "mus_radio_05_pop_off_the_leash",
+  "station": "05",
+  "rest": "pop_off_the_leash",
+  "wem": 235217575,
+  "file": "05_pop_off_the_leash.mp3",
+  "duration": 197.9,
+  "title": "Us Cracks - Off The Leash"
+ },
+ {
+  "event": "mus_radio_05_pop_ponpon_shit",
+  "station": "05",
+  "rest": "pop_ponpon_shit",
+  "wem": 259328250,
+  "file": "05_pop_ponpon_shit.mp3",
+  "duration": 214.0,
+  "title": "Us Cracks - PonPon Shit"
+ },
+ {
+  "event": "mus_radio_05_pop_shygirl",
+  "station": "05",
+  "rest": "pop_shygirl",
+  "wem": 1017973036,
+  "file": "05_pop_shygirl.mp3",
+  "duration": 156.8,
+  "title": "Clockwork Venus - BM"
+ },
+ {
+  "event": "mus_radio_05_pop_user_friendly",
+  "station": "05",
+  "rest": "pop_user_friendly",
+  "wem": 503548262,
+  "file": "05_pop_user_friendly.mp3",
+  "duration": 184.0,
+  "title": "Us Cracks feat. Kerry Eurodyne - User Friendly"
+ },
+ {
+  "event": "mus_radio_05_pop_whos_ready",
+  "station": "05",
+  "rest": "pop_whos_ready",
+  "wem": 881186580,
+  "file": "05_pop_whos_ready.mp3",
+  "duration": 112.0,
+  "title": null
+ },
+ {
+  "event": "mus_radio_06_minim_tech_blips_01",
+  "station": "06",
+  "rest": "minim_tech_blips_01",
+  "wem": 789557574,
+  "file": "06_minim_tech_blips_01.mp3",
+  "duration": 11.3,
+  "title": null
+ },
+ {
+  "event": "mus_radio_06_minim_tech_blips_02",
+  "station": "06",
+  "rest": "minim_tech_blips_02",
+  "wem": 848658177,
+  "file": "06_minim_tech_blips_02.mp3",
+  "duration": 11.2,
+  "title": null
+ },
+ {
+  "event": "mus_radio_06_minim_tech_blips_03",
+  "station": "06",
+  "rest": "minim_tech_blips_03",
+  "wem": 957429891,
+  "file": "06_minim_tech_blips_03.mp3",
+  "duration": 7.1,
+  "title": null
+ },
+ {
+  "event": "mus_radio_06_minim_tech_delirium2",
+  "station": "06",
+  "rest": "minim_tech_delirium2",
+  "wem": 625219838,
+  "file": "06_minim_tech_delirium2.mp3",
+  "duration": 894.0,
+  "title": "Bara Nova - Delirium 2"
+ },
+ {
+  "event": "mus_radio_06_minim_tech_harm_sweaty_pit",
+  "station": "06",
+  "rest": "minim_tech_harm_sweaty_pit",
+  "wem": 928983117,
+  "file": "06_minim_tech_harm_sweaty_pit.mp3",
+  "duration": 826.0,
+  "title": "Bara Nova - Harm Sweaty Pit"
+ },
+ {
+  "event": "mus_radio_06_minim_tech_my_lullaby_for_you",
+  "station": "06",
+  "rest": "minim_tech_my_lullaby_for_you",
+  "wem": 740337697,
+  "file": "06_minim_tech_my_lullaby_for_you.mp3",
+  "duration": 335.0,
+  "title": "Bara Nova - My Lullaby For You"
+ },
+ {
+  "event": "mus_radio_06_minim_tech_pilling_in_my_head",
+  "station": "06",
+  "rest": "minim_tech_pilling_in_my_head",
+  "wem": 185138126,
+  "file": "06_minim_tech_pilling_in_my_head.mp3",
+  "duration": 480.0,
+  "title": "Bara Nova - Pilling In My Head"
+ },
+ {
+  "event": "mus_radio_06_minim_tech_surprise_me",
+  "station": "06",
+  "rest": "minim_tech_surprise_me",
+  "wem": 822859958,
+  "file": "06_minim_tech_surprise_me.mp3",
+  "duration": 358.0,
+  "title": "Bara Nova - Surprise Me, I'm Surprised Today"
+ },
+ {
+  "event": "mus_radio_07_aggro_techno_acid",
+  "station": "07",
+  "rest": "aggro_techno_acid",
+  "wem": 573266683,
+  "file": "07_aggro_techno_acid.mp3",
+  "duration": 302.0,
+  "title": null
+ },
+ {
+  "event": "mus_radio_07_aggro_techno_bios",
+  "station": "07",
+  "rest": "aggro_techno_bios",
+  "wem": 254461336,
+  "file": "07_aggro_techno_bios.mp3",
+  "duration": 140.0,
+  "title": "Error - BIOS"
+ },
+ {
+  "event": "mus_radio_07_aggro_techno_blips_01",
+  "station": "07",
+  "rest": "aggro_techno_blips_01",
+  "wem": 615874745,
+  "file": "07_aggro_techno_blips_01.mp3",
+  "duration": 7.1,
+  "title": null
+ },
+ {
+  "event": "mus_radio_07_aggro_techno_blips_02",
+  "station": "07",
+  "rest": "aggro_techno_blips_02",
+  "wem": 493162163,
+  "file": "07_aggro_techno_blips_02.mp3",
+  "duration": 7.1,
+  "title": null
+ },
+ {
+  "event": "mus_radio_07_aggro_techno_blips_03",
+  "station": "07",
+  "rest": "aggro_techno_blips_03",
+  "wem": 445903319,
+  "file": "07_aggro_techno_blips_03.mp3",
+  "duration": 5.2,
+  "title": null
+ },
+ {
+  "event": "mus_radio_07_aggro_techno_cannibalismus",
+  "station": "07",
+  "rest": "aggro_techno_cannibalismus",
+  "wem": 361407323,
+  "file": "07_aggro_techno_cannibalismus.mp3",
+  "duration": 206.2,
+  "title": "Bullet In The Head - CANNIBALISMUS"
+ },
+ {
+  "event": "mus_radio_07_aggro_techno_cdpmetal_vascular",
+  "station": "07",
+  "rest": "aggro_techno_cdpmetal_vascular",
+  "wem": 789477170,
+  "file": "07_aggro_techno_cdpmetal_vascular.mp3",
+  "duration": 176.0,
+  "title": "Tar Hawk - Vascular"
+ },
+ {
+  "event": "mus_radio_07_aggro_techno_dark_retro",
+  "station": "07",
+  "rest": "aggro_techno_dark_retro",
+  "wem": 172754141,
+  "file": "07_aggro_techno_dark_retro.mp3",
+  "duration": 288.0,
+  "title": "Dukes of Azure - DARK RETRO"
+ },
+ {
+  "event": "mus_radio_07_aggro_techno_drained",
+  "station": "07",
+  "rest": "aggro_techno_drained",
+  "wem": 450630849,
+  "file": "07_aggro_techno_drained.mp3",
+  "duration": 240.0,
+  "title": "Sao Mai - Drained"
+ },
+ {
+  "event": "mus_radio_07_aggro_techno_follow_the_white_crow",
+  "station": "07",
+  "rest": "aggro_techno_follow_the_white_crow",
+  "wem": 903459303,
+  "file": "07_aggro_techno_follow_the_white_crow.mp3",
+  "duration": 246.0,
+  "title": "Nablus - Follow The White Crow"
+ },
+ {
+  "event": "mus_radio_07_aggro_techno_jam",
+  "station": "07",
+  "rest": "aggro_techno_jam",
+  "wem": 713386379,
+  "file": "07_aggro_techno_jam.mp3",
+  "duration": 256.0,
+  "title": null
+ },
+ {
+  "event": "mus_radio_07_aggro_techno_really_heavy_groove",
+  "station": "07",
+  "rest": "aggro_techno_really_heavy_groove",
+  "wem": 265347381,
+  "file": "07_aggro_techno_really_heavy_groove.mp3",
+  "duration": 380.0,
+  "title": null
+ },
+ {
+  "event": "mus_radio_07_aggro_techno_stack_overflow",
+  "station": "07",
+  "rest": "aggro_techno_stack_overflow",
+  "wem": 28890981,
+  "file": "07_aggro_techno_stack_overflow.mp3",
+  "duration": 290.0,
+  "title": "Clockwork OS - stackoverflow"
+ },
+ {
+  "event": "mus_radio_07_aggro_techno_stoczterdziescitrzy",
+  "station": "07",
+  "rest": "aggro_techno_stoczterdziescitrzy",
+  "wem": 789246932,
+  "file": "07_aggro_techno_stoczterdziescitrzy.mp3",
+  "duration": 324.0,
+  "title": null
+ },
+ {
+  "event": "mus_radio_07_aggro_techno_subvert",
+  "station": "07",
+  "rest": "aggro_techno_subvert",
+  "wem": 992013305,
+  "file": "07_aggro_techno_subvert.mp3",
+  "duration": 210.0,
+  "title": "Spoon Eater - Subvert"
+ },
+ {
+  "event": "mus_radio_07_aggro_techno_zero_acid",
+  "station": "07",
+  "rest": "aggro_techno_zero_acid",
+  "wem": 104232706,
+  "file": "07_aggro_techno_zero_acid.mp3",
+  "duration": 344.0,
+  "title": null
+ },
+ {
+  "event": "mus_radio_08_aggro_techno_cyberpunk02",
+  "station": "08",
+  "rest": "aggro_techno_cyberpunk02",
+  "wem": 954776920,
+  "file": "08_aggro_techno_cyberpunk02.mp3",
+  "duration": 298.0,
+  "title": null
+ },
+ {
+  "event": "mus_radio_08_aggro_techno_fake_spook",
+  "station": "08",
+  "rest": "aggro_techno_fake_spook",
+  "wem": 854232133,
+  "file": "08_aggro_techno_fake_spook.mp3",
+  "duration": 294.0,
+  "title": "IOshrine - Fake Spook"
+ },
+ {
+  "event": "mus_radio_08_aggro_techno_move_dat",
+  "station": "08",
+  "rest": "aggro_techno_move_dat",
+  "wem": 472230949,
+  "file": "08_aggro_techno_move_dat.mp3",
+  "duration": 176.0,
+  "title": "[flesh]reactor - Move .dat"
+ },
+ {
+  "event": "mus_radio_08_jazz_bitches_brew",
+  "station": "08",
+  "rest": "jazz_bitches_brew",
+  "wem": 915057747,
+  "file": "08_jazz_bitches_brew.mp3",
+  "duration": 292.0,
+  "title": "Miles Davis - Bitches Brew"
+ },
+ {
+  "event": "mus_radio_08_jazz_black_satin_what_if_agharta",
+  "station": "08",
+  "rest": "jazz_black_satin_what_if_agharta",
+  "wem": 448263054,
+  "file": "08_jazz_black_satin_what_if_agharta.mp3",
+  "duration": 928.5,
+  "title": "Miles Davis - Black Satin / What If / Agharta Prelude Dub"
+ },
+ {
+  "event": "mus_radio_08_jazz_blips_01_F",
+  "station": "08",
+  "rest": "jazz_blips_01_F",
+  "wem": 197336484,
+  "file": "08_jazz_blips_01_F.mp3",
+  "duration": 9.5,
+  "title": null
+ },
+ {
+  "event": "mus_radio_08_jazz_blips_01_JP",
+  "station": "08",
+  "rest": "jazz_blips_01_JP",
+  "wem": 66052711,
+  "file": "08_jazz_blips_01_JP.mp3",
+  "duration": 7.6,
+  "title": null
+ },
+ {
+  "event": "mus_radio_08_jazz_blips_01_P",
+  "station": "08",
+  "rest": "jazz_blips_01_P",
+  "wem": 272220110,
+  "file": "08_jazz_blips_01_P.mp3",
+  "duration": 9.4,
+  "title": null
+ },
+ {
+  "event": "mus_radio_08_jazz_blips_02_F",
+  "station": "08",
+  "rest": "jazz_blips_02_F",
+  "wem": 119313970,
+  "file": "08_jazz_blips_02_F.mp3",
+  "duration": 6.6,
+  "title": null
+ },
+ {
+  "event": "mus_radio_08_jazz_blips_02_JP",
+  "station": "08",
+  "rest": "jazz_blips_02_JP",
+  "wem": 712496434,
+  "file": "08_jazz_blips_02_JP.mp3",
+  "duration": 9.4,
+  "title": null
+ },
+ {
+  "event": "mus_radio_08_jazz_dark_prince",
+  "station": "08",
+  "rest": "jazz_dark_prince",
+  "wem": 449864253,
+  "file": "08_jazz_dark_prince.mp3",
+  "duration": 231.2,
+  "title": "John McLaughlin - Dark Prince"
+ },
+ {
+  "event": "mus_radio_08_jazz_generique",
+  "station": "08",
+  "rest": "jazz_generique",
+  "wem": 143859087,
+  "file": "08_jazz_generique.mp3",
+  "duration": 166.4,
+  "title": "Miles Davis - Ascenseur pour l'échafaud - Générique"
+ },
+ {
+  "event": "mus_radio_08_jazz_impressions",
+  "station": "08",
+  "rest": "jazz_impressions",
+  "wem": 230077180,
+  "file": "08_jazz_impressions.mp3",
+  "duration": 390.6,
+  "title": "John Coltrane - Impressions"
+ },
+ {
+  "event": "mus_radio_08_jazz_laura",
+  "station": "08",
+  "rest": "jazz_laura",
+  "wem": 419089334,
+  "file": "08_jazz_laura.mp3",
+  "duration": 456.9,
+  "title": "Dexter Gordon - Sophisticated Giant - Laura"
+ },
+ {
+  "event": "mus_radio_08_jazz_round_midnight",
+  "station": "08",
+  "rest": "jazz_round_midnight",
+  "wem": 487426870,
+  "file": "08_jazz_round_midnight.mp3",
+  "duration": 229.0,
+  "title": "Thelonius Monk - 'Round Midnight"
+ },
+ {
+  "event": "mus_radio_08_jazz_solo_dancer",
+  "station": "08",
+  "rest": "jazz_solo_dancer",
+  "wem": 1014236840,
+  "file": "08_jazz_solo_dancer.mp3",
+  "duration": 395.0,
+  "title": "Charles Mingus - The Black Saint and the Sinner Lady - Solo Dancer"
+ },
+ {
+  "event": "mus_radio_08_jazz_you_dont_know_what_love_is",
+  "station": "08",
+  "rest": "jazz_you_dont_know_what_love_is",
+  "wem": 400388835,
+  "file": "08_jazz_you_dont_know_what_love_is.mp3",
+  "duration": 287.4,
+  "title": "Chet Baker - You Don't Know What Love Is"
+ },
+ {
+  "event": "mus_radio_09_downtempo_antagonistic",
+  "station": "09",
+  "rest": "downtempo_antagonistic",
+  "wem": 190841656,
+  "file": "09_downtempo_antagonistic.mp3",
+  "duration": 166.0,
+  "title": "Pacific Avenue - Antagonistic"
+ },
+ {
+  "event": "mus_radio_09_downtempo_ashes_and_diamonds",
+  "station": "09",
+  "rest": "downtempo_ashes_and_diamonds",
+  "wem": 95368841,
+  "file": "09_downtempo_ashes_and_diamonds.mp3",
+  "duration": 251.0,
+  "title": "WORMVIEW - Ashes and Diamonds"
+ },
+ {
+  "event": "mus_radio_09_downtempo_blips_01",
+  "station": "09",
+  "rest": "downtempo_blips_01",
+  "wem": 128841128,
+  "file": "09_downtempo_blips_01.mp3",
+  "duration": 6.1,
+  "title": null
+ },
+ {
+  "event": "mus_radio_09_downtempo_blips_02",
+  "station": "09",
+  "rest": "downtempo_blips_02",
+  "wem": 750587894,
+  "file": "09_downtempo_blips_02.mp3",
+  "duration": 7.6,
+  "title": null
+ },
+ {
+  "event": "mus_radio_09_downtempo_blips_03",
+  "station": "09",
+  "rest": "downtempo_blips_03",
+  "wem": 1004904231,
+  "file": "09_downtempo_blips_03.mp3",
+  "duration": 6.2,
+  "title": null
+ },
+ {
+  "event": "mus_radio_09_downtempo_cdprojekt2_uferlos",
+  "station": "09",
+  "rest": "downtempo_cdprojekt2_uferlos",
+  "wem": 1017413855,
+  "file": "09_downtempo_cdprojekt2_uferlos.mp3",
+  "duration": 391.4,
+  "title": null
+ },
+ {
+  "event": "mus_radio_09_downtempo_chodze",
+  "station": "09",
+  "rest": "downtempo_chodze",
+  "wem": 1066343217,
+  "file": "09_downtempo_chodze.mp3",
+  "duration": 283.2,
+  "title": "Muchomorr - Chodze"
+ },
+ {
+  "event": "mus_radio_09_downtempo_cyberpunk05",
+  "station": "09",
+  "rest": "downtempo_cyberpunk05",
+  "wem": 928920080,
+  "file": "09_downtempo_cyberpunk05.mp3",
+  "duration": 244.5,
+  "title": null
+ },
+ {
+  "event": "mus_radio_09_downtempo_cyberpunk06",
+  "station": "09",
+  "rest": "downtempo_cyberpunk06",
+  "wem": 285910393,
+  "file": "09_downtempo_cyberpunk06.mp3",
+  "duration": 279.6,
+  "title": null
+ },
+ {
+  "event": "mus_radio_09_downtempo_cyberpunk08",
+  "station": "09",
+  "rest": "downtempo_cyberpunk08",
+  "wem": 869646378,
+  "file": "09_downtempo_cyberpunk08.mp3",
+  "duration": 201.5,
+  "title": null
+ },
+ {
+  "event": "mus_radio_09_downtempo_demo4",
+  "station": "09",
+  "rest": "downtempo_demo4",
+  "wem": 770891476,
+  "file": "09_downtempo_demo4.mp3",
+  "duration": 275.5,
+  "title": null
+ },
+ {
+  "event": "mus_radio_09_downtempo_demo7",
+  "station": "09",
+  "rest": "downtempo_demo7",
+  "wem": 1044871022,
+  "file": "09_downtempo_demo7.mp3",
+  "duration": 257.0,
+  "title": null
+ },
+ {
+  "event": "mus_radio_09_downtempo_dub_dub_mix_ambient",
+  "station": "09",
+  "rest": "downtempo_dub_dub_mix_ambient",
+  "wem": 562668759,
+  "file": "09_downtempo_dub_dub_mix_ambient.mp3",
+  "duration": 341.0,
+  "title": null
+ },
+ {
+  "event": "mus_radio_09_downtempo_isometric_air",
+  "station": "09",
+  "rest": "downtempo_isometric_air",
+  "wem": 253367813,
+  "file": "09_downtempo_isometric_air.mp3",
+  "duration": 271.0,
+  "title": "Quantum Lovers - Isometric Air"
+ },
+ {
+  "event": "mus_radio_09_downtempo_le_stessa_causa",
+  "station": "09",
+  "rest": "downtempo_le_stessa_causa",
+  "wem": 621406329,
+  "file": "09_downtempo_le_stessa_causa.mp3",
+  "duration": 269.5,
+  "title": "Sonoris Causa - La Stessa Causa"
+ },
+ {
+  "event": "mus_radio_09_downtempo_miami_suicide",
+  "station": "09",
+  "rest": "downtempo_miami_suicide",
+  "wem": 400079366,
+  "file": "09_downtempo_miami_suicide.mp3",
+  "duration": 269.0,
+  "title": "Talk To Us - Miami Suicide"
+ },
+ {
+  "event": "mus_radio_09_downtempo_practical_heart",
+  "station": "09",
+  "rest": "downtempo_practical_heart",
+  "wem": 910852846,
+  "file": "09_downtempo_practical_heart.mp3",
+  "duration": 243.0,
+  "title": "Quantum Lovers - Practical Heart"
+ },
+ {
+  "event": "mus_radio_09_downtempo_real_window",
+  "station": "09",
+  "rest": "downtempo_real_window",
+  "wem": 1005242856,
+  "file": "09_downtempo_real_window.mp3",
+  "duration": 227.2,
+  "title": "Quantum Lovers - Real Window"
+ },
+ {
+  "event": "mus_radio_09_downtempo_simple_pleasures",
+  "station": "09",
+  "rest": "downtempo_simple_pleasures",
+  "wem": 803750564,
+  "file": "09_downtempo_simple_pleasures.mp3",
+  "duration": 188.5,
+  "title": "Jänsens - Simplepleasures"
+ },
+ {
+  "event": "mus_radio_09_downtempo_slippery_stabs",
+  "station": "09",
+  "rest": "downtempo_slippery_stabs",
+  "wem": 1056620275,
+  "file": "09_downtempo_slippery_stabs.mp3",
+  "duration": 193.0,
+  "title": "Talk To Us - Slippery Stabs"
+ },
+ {
+  "event": "mus_radio_10_latino_bamo",
+  "station": "10",
+  "rest": "latino_bamo",
+  "wem": 505436507,
+  "file": "10_latino_bamo.mp3",
+  "duration": 192.5,
+  "title": "Kartel Sonoro - Bamo"
+ },
+ {
+  "event": "mus_radio_10_latino_barrio",
+  "station": "10",
+  "rest": "latino_barrio",
+  "wem": 973916952,
+  "file": "10_latino_barrio.mp3",
+  "duration": 190.0,
+  "title": "Big Machete - Barrio"
+ },
+ {
+  "event": "mus_radio_10_latino_blips_01",
+  "station": "10",
+  "rest": "latino_blips_01",
+  "wem": 91143381,
+  "file": "10_latino_blips_01.mp3",
+  "duration": 13.2,
+  "title": null
+ },
+ {
+  "event": "mus_radio_10_latino_blips_02",
+  "station": "10",
+  "rest": "latino_blips_02",
+  "wem": 922727393,
+  "file": "10_latino_blips_02.mp3",
+  "duration": 10.9,
+  "title": null
+ },
+ {
+  "event": "mus_radio_10_latino_blips_03",
+  "station": "10",
+  "rest": "latino_blips_03",
+  "wem": 25396109,
+  "file": "10_latino_blips_03.mp3",
+  "duration": 10.9,
+  "title": null
+ },
+ {
+  "event": "mus_radio_10_latino_cumbia",
+  "station": "10",
+  "rest": "latino_cumbia",
+  "wem": 179243125,
+  "file": "10_latino_cumbia.mp3",
+  "duration": 152.0,
+  "title": "Papito Gringo - Muévelo / Cumbia"
+ },
+ {
+  "event": "mus_radio_10_latino_daggafrica",
+  "station": "10",
+  "rest": "latino_daggafrica",
+  "wem": 507913744,
+  "file": "10_latino_daggafrica.mp3",
+  "duration": 178.5,
+  "title": "Kartel Sonoro - Daggafrica"
+ },
+ {
+  "event": "mus_radio_10_latino_dinero",
+  "station": "10",
+  "rest": "latino_dinero",
+  "wem": 7556210,
+  "file": "10_latino_dinero.mp3",
+  "duration": 194.0,
+  "title": "7 Facas - Dinero"
+ },
+ {
+  "event": "mus_radio_10_latino_hood",
+  "station": "10",
+  "rest": "latino_hood",
+  "wem": 328370557,
+  "file": "10_latino_hood.mp3",
+  "duration": 184.0,
+  "title": "ChickyChikas - Hood"
+ },
+ {
+  "event": "mus_radio_10_latino_muertothrash",
+  "station": "10",
+  "rest": "latino_muertothrash",
+  "wem": 858828322,
+  "file": "10_latino_muertothrash.mp3",
+  "duration": 182.0,
+  "title": "FKxU - Muerto Thrash"
+ },
+ {
+  "event": "mus_radio_10_latino_only_son",
+  "station": "10",
+  "rest": "latino_only_son",
+  "wem": 398402575,
+  "file": "10_latino_only_son.mp3",
+  "duration": 178.8,
+  "title": "ChickyChickas - Only Son"
+ },
+ {
+  "event": "mus_radio_10_latino_serpant",
+  "station": "10",
+  "rest": "latino_serpant",
+  "wem": 200129727,
+  "file": "10_latino_serpant.mp3",
+  "duration": 185.0,
+  "title": "7 Facas - Serpant"
+ },
+ {
+  "event": "mus_radio_10_latino_tatted_on_my_face",
+  "station": "10",
+  "rest": "latino_tatted_on_my_face",
+  "wem": 626364837,
+  "file": "10_latino_tatted_on_my_face.mp3",
+  "duration": 184.0,
+  "title": "Don Mara - Tatted On My Face"
+ },
+ {
+  "event": "mus_radio_10_latino_westcoast_till_i_die",
+  "station": "10",
+  "rest": "latino_westcoast_till_i_die",
+  "wem": 711322898,
+  "file": "10_latino_westcoast_till_i_die.mp3",
+  "duration": 189.2,
+  "title": "DJ CholoZ - Westcoast Til I Die"
+ },
+ {
+  "event": "mus_radio_11_metal_2",
+  "station": "11",
+  "rest": "metal_2",
+  "wem": 670708886,
+  "file": "11_metal_2.mp3",
+  "duration": 247.8,
+  "title": null
+ },
+ {
+  "event": "mus_radio_11_metal_abandoned_land",
+  "station": "11",
+  "rest": "metal_abandoned_land",
+  "wem": 957306104,
+  "file": "11_metal_abandoned_land.mp3",
+  "duration": 242.2,
+  "title": "Fist of Satan - Abandoned Land"
+ },
+ {
+  "event": "mus_radio_11_metal_acid_breather",
+  "station": "11",
+  "rest": "metal_acid_breather",
+  "wem": 685504893,
+  "file": "11_metal_acid_breather.mp3",
+  "duration": 82.2,
+  "title": "Forlorn Scourge - Acid Breather"
+ },
+ {
+  "event": "mus_radio_11_metal_black_concrete",
+  "station": "11",
+  "rest": "metal_black_concrete",
+  "wem": 114092930,
+  "file": "11_metal_black_concrete.mp3",
+  "duration": 236.1,
+  "title": "Fist of Satan - Black Concrete"
+ },
+ {
+  "event": "mus_radio_11_metal_blips_01",
+  "station": "11",
+  "rest": "metal_blips_01",
+  "wem": 752675320,
+  "file": "11_metal_blips_01.mp3",
+  "duration": 8.5,
+  "title": null
+ },
+ {
+  "event": "mus_radio_11_metal_blips_02",
+  "station": "11",
+  "rest": "metal_blips_02",
+  "wem": 686466489,
+  "file": "11_metal_blips_02.mp3",
+  "duration": 10.4,
+  "title": null
+ },
+ {
+  "event": "mus_radio_11_metal_blips_03_J",
+  "station": "11",
+  "rest": "metal_blips_03_J",
+  "wem": 88070376,
+  "file": "11_metal_blips_03_J.mp3",
+  "duration": 8.5,
+  "title": null
+ },
+ {
+  "event": "mus_radio_11_metal_blips_03_P",
+  "station": "11",
+  "rest": "metal_blips_03_P",
+  "wem": 180892104,
+  "file": "11_metal_blips_03_P.mp3",
+  "duration": 8.5,
+  "title": null
+ },
+ {
+  "event": "mus_radio_11_metal_finis",
+  "station": "11",
+  "rest": "metal_finis",
+  "wem": 323048169,
+  "file": "11_metal_finis.mp3",
+  "duration": 244.5,
+  "title": "V3RM1N - Finis"
+ },
+ {
+  "event": "mus_radio_11_metal_fueled_by_poison",
+  "station": "11",
+  "rest": "metal_fueled_by_poison",
+  "wem": 532284261,
+  "file": "11_metal_fueled_by_poison.mp3",
+  "duration": 170.0,
+  "title": "Inferno Corps - Fueled By Poison"
+ },
+ {
+  "event": "mus_radio_11_metal_future_drags",
+  "station": "11",
+  "rest": "metal_future_drags",
+  "wem": 620624990,
+  "file": "11_metal_future_drags.mp3",
+  "duration": 254.2,
+  "title": "heXXXer - Future Drugs"
+ },
+ {
+  "event": "mus_radio_11_metal_i_wont_let_you_go",
+  "station": "11",
+  "rest": "metal_i_wont_let_you_go",
+  "wem": 643641585,
+  "file": "11_metal_i_wont_let_you_go.mp3",
+  "duration": 178.5,
+  "title": "Shattered Void - I Won't Let You Go"
+ },
+ {
+  "event": "mus_radio_11_metal_kevin",
+  "station": "11",
+  "rest": "metal_kevin",
+  "wem": 606018074,
+  "file": "11_metal_kevin.mp3",
+  "duration": 140.4,
+  "title": "Inferno Corps - Kevin"
+ },
+ {
+  "event": "mus_radio_11_metal_march30",
+  "station": "11",
+  "rest": "metal_march30",
+  "wem": 643009039,
+  "file": "11_metal_march30.mp3",
+  "duration": 172.5,
+  "title": "Bacillus - March 30"
+ },
+ {
+  "event": "mus_radio_11_metal_scum",
+  "station": "11",
+  "rest": "metal_scum",
+  "wem": 516709760,
+  "file": "11_metal_scum.mp3",
+  "duration": 235.2,
+  "title": "Hysteria - Scum"
+ },
+ {
+  "event": "mus_radio_11_metal_the_loop",
+  "station": "11",
+  "rest": "metal_the_loop",
+  "wem": 381506730,
+  "file": "11_metal_the_loop.mp3",
+  "duration": 229.2,
+  "title": "Weles - The Loop"
+ },
+ {
+  "event": "mus_radio_11_metal_theaccursed",
+  "station": "11",
+  "rest": "metal_theaccursed",
+  "wem": 969984534,
+  "file": "11_metal_theaccursed.mp3",
+  "duration": 320.8,
+  "title": "Dread Soul - The Accursed"
+ },
+ {
+  "event": "mus_radio_11_metal_zurawie",
+  "station": "11",
+  "rest": "metal_zurawie",
+  "wem": 101839488,
+  "file": "11_metal_zurawie.mp3",
+  "duration": 109.9,
+  "title": "Wydech - Żurawie"
+ },
+ {
+  "event": "mus_radio_12_afterlife",
+  "station": "12",
+  "rest": "afterlife",
+  "wem": 900442762,
+  "file": "12_afterlife.mp3",
+  "duration": 169.7,
+  "title": "Thai McGrath (ft. JustCosplaySings) - Afterlife"
+ },
+ {
+  "event": "mus_radio_12_candyshell",
+  "station": "12",
+  "rest": "candyshell",
+  "wem": 945083955,
+  "file": "12_candyshell.mp3",
+  "duration": 179.1,
+  "title": "Spirit Machines - Candy Shell"
+ },
+ {
+  "event": "mus_radio_12_ch",
+  "station": "12",
+  "rest": "ch",
+  "wem": 214475991,
+  "file": "12_ch.mp3",
+  "duration": 165.0,
+  "title": "Haru Nemuri - Samayoeru mama yuke"
+ },
+ {
+  "event": "mus_radio_12_do_or_die",
+  "station": "12",
+  "rest": "do_or_die",
+  "wem": 807725976,
+  "file": "12_do_or_die.mp3",
+  "duration": 152.3,
+  "title": "NoWorld - Do or Die"
+ },
+ {
+  "event": "mus_radio_12_flatline",
+  "station": "12",
+  "rest": "flatline",
+  "wem": 694001176,
+  "file": "12_flatline.mp3",
+  "duration": 160.0,
+  "title": "Red Dead Roadkill - Flatline"
+ },
+ {
+  "event": "mus_radio_12_fumes",
+  "station": "12",
+  "rest": "fumes",
+  "wem": 252703137,
+  "file": "12_fumes.mp3",
+  "duration": 167.1,
+  "title": "Aleyna Moon, Shrinjay Ghosh - FUMES"
+ },
+ {
+  "event": "mus_radio_12_killshot",
+  "station": "12",
+  "rest": "killshot",
+  "wem": 116162799,
+  "file": "12_killshot.mp3",
+  "duration": 142.2,
+  "title": "Frost, Justtjokay, Dubbygotbars, Knyvez - Killshot"
+ },
+ {
+  "event": "mus_radio_12_kiroshi",
+  "station": "12",
+  "rest": "kiroshi",
+  "wem": 606235279,
+  "file": "12_kiroshi.mp3",
+  "duration": 174.0,
+  "title": "D.O.H. - Look Through My Kiroshis"
+ },
+ {
+  "event": "mus_radio_12_lit",
+  "station": "12",
+  "rest": "lit",
+  "wem": 265573485,
+  "file": "12_lit.mp3",
+  "duration": 179.5,
+  "title": "Entolim - LIT"
+ },
+ {
+  "event": "mus_radio_12_skin_on_flesh",
+  "station": "12",
+  "rest": "skin_on_flesh",
+  "wem": 951381637,
+  "file": "12_skin_on_flesh.mp3",
+  "duration": 128.5,
+  "title": "Skin on Flesh - El Tiempo"
+ },
+ {
+  "event": "mus_radio_12_slipstream",
+  "station": "12",
+  "rest": "slipstream",
+  "wem": 581037122,
+  "file": "12_slipstream.mp3",
+  "duration": 157.7,
+  "title": "Kiba - Slipstream"
+ },
+ {
+  "event": "mus_radio_12_stars_die",
+  "station": "12",
+  "rest": "stars_die",
+  "wem": 444314240,
+  "file": "12_stars_die.mp3",
+  "duration": 146.4,
+  "title": "Coeur Noir - Let The Stars Die"
+ },
+ {
+  "event": "mus_radio_12_to_heaven",
+  "station": "12",
+  "rest": "to_heaven",
+  "wem": 816183854,
+  "file": "12_to_heaven.mp3",
+  "duration": 175.2,
+  "title": "St. Aurora - Going To Heaven"
+ },
+ {
+  "event": "mus_radio_13_dstar_27fuckdemons",
+  "station": "13",
+  "rest": "dstar_27fuckdemons",
+  "wem": 22550244,
+  "file": "13_dstar_27fuckdemons.mp3",
+  "duration": 162.7,
+  "title": "OLO Y - Pierwszy raz naprawdę"
+ },
+ {
+  "event": "mus_radio_13_dstar_backxwash",
+  "station": "13",
+  "rest": "dstar_backxwash",
+  "wem": 661309522,
+  "file": "13_dstar_backxwash.mp3",
+  "duration": 237.2,
+  "title": "BADPANNINI - Headrush"
+ },
+ {
+  "event": "mus_radio_13_dstar_blips_01_B",
+  "station": "13",
+  "rest": "dstar_blips_01_B",
+  "wem": 165565468,
+  "file": "13_dstar_blips_01_B.mp3",
+  "duration": 10.0,
+  "title": null
+ },
+ {
+  "event": "mus_radio_13_dstar_blips_01_J",
+  "station": "13",
+  "rest": "dstar_blips_01_J",
+  "wem": 771183218,
+  "file": "13_dstar_blips_01_J.mp3",
+  "duration": 10.0,
+  "title": null
+ },
+ {
+  "event": "mus_radio_13_dstar_blips_03_M",
+  "station": "13",
+  "rest": "dstar_blips_03_M",
+  "wem": 478850173,
+  "file": "13_dstar_blips_03_M.mp3",
+  "duration": 10.4,
+  "title": null
+ },
+ {
+  "event": "mus_radio_13_dstar_blips_03_P",
+  "station": "13",
+  "rest": "dstar_blips_03_P",
+  "wem": 99989307,
+  "file": "13_dstar_blips_03_P.mp3",
+  "duration": 10.4,
+  "title": null
+ },
+ {
+  "event": "mus_radio_13_dstar_chokehold",
+  "station": "13",
+  "rest": "dstar_chokehold",
+  "wem": 30149432,
+  "file": "13_dstar_chokehold.mp3",
+  "duration": 132.6,
+  "title": "Mr. Kipper - Choke Hold"
+ },
+ {
+  "event": "mus_radio_13_dstar_cykoarctic",
+  "station": "13",
+  "rest": "dstar_cykoarctic",
+  "wem": 750285308,
+  "file": "13_dstar_cykoarctic.mp3",
+  "duration": 183.7,
+  "title": "Bwana Mungu - Cykoarctic"
+ },
+ {
+  "event": "mus_radio_13_dstar_drk",
+  "station": "13",
+  "rest": "dstar_drk",
+  "wem": 554215322,
+  "file": "13_dstar_drk.mp3",
+  "duration": 240.5,
+  "title": "Walt Air - dRk"
+ },
+ {
+  "event": "mus_radio_13_dstar_hagop",
+  "station": "13",
+  "rest": "dstar_hagop",
+  "wem": 747444235,
+  "file": "13_dstar_hagop.mp3",
+  "duration": 204.2,
+  "title": "No Strings Attached - Orbital Insertion"
+ },
+ {
+  "event": "mus_radio_13_dstar_julek1",
+  "station": "13",
+  "rest": "dstar_julek1",
+  "wem": 329846451,
+  "file": "13_dstar_julek1.mp3",
+  "duration": 176.1,
+  "title": "DJ papergekko - Nuclear Dreamland"
+ },
+ {
+  "event": "mus_radio_13_dstar_julek2",
+  "station": "13",
+  "rest": "dstar_julek2",
+  "wem": 71696280,
+  "file": "13_dstar_julek2.mp3",
+  "duration": 133.5,
+  "title": "DJ papergekko - Bigger Crimes"
+ },
+ {
+  "event": "mus_radio_13_dstar_kyberpunk",
+  "station": "13",
+  "rest": "dstar_kyberpunk",
+  "wem": 766230008,
+  "file": "13_dstar_kyberpunk.mp3",
+  "duration": 177.3,
+  "title": "Her Mashewski - fabrica KOSMOS"
+ },
+ {
+  "event": "mus_radio_13_dstar_minionsex",
+  "station": "13",
+  "rest": "dstar_minionsex",
+  "wem": 483528050,
+  "file": "13_dstar_minionsex.mp3",
+  "duration": 172.6,
+  "title": "Mightonauts - Minion Sex"
+ },
+ {
+  "event": "mus_radio_13_dstar_mzuzu",
+  "station": "13",
+  "rest": "dstar_mzuzu",
+  "wem": 617780730,
+  "file": "13_dstar_mzuzu.mp3",
+  "duration": 194.6,
+  "title": "łotr - Memories of Mzuzu"
+ },
+ {
+  "event": "mus_radio_13_dstar_roller",
+  "station": "13",
+  "rest": "dstar_roller",
+  "wem": 569092571,
+  "file": "13_dstar_roller.mp3",
+  "duration": 127.3,
+  "title": "Mr. Kipper - Rolla"
+ },
+ {
+  "event": "mus_radio_13_dstar_zuukuka",
+  "station": "13",
+  "rest": "dstar_zuukuka",
+  "wem": 307219088,
+  "file": "13_dstar_zuukuka.mp3",
+  "duration": 150.0,
+  "title": "Ecko Frequency - Zuuka"
+ },
+ {
+  "event": "mus_radio_14_impulse_djset",
+  "station": "14",
+  "rest": "impulse_djset",
+  "wem": 424884909,
+  "file": "14_impulse_djset.mp3",
+  "duration": 3803.5,
+  "title": "Djset"
+ },
+ {
+  "event": "mus_radio_14impls_djset_pyramid_edit",
+  "station": "14",
+  "rest": "impls_djset_pyramid_edit",
+  "wem": 424884909,
+  "file": "14impls_djset_pyramid_edit.mp3",
+  "duration": 3803.5,
+  "title": null
+ },
+ {
+  "event": "mus_custom_radio_ratatata",
+  "station": "04",
+  "rest": "_radio_ratatata",
+  "wem": 198353675,
+  "file": "04_hiphop_ratatata.mp3",
+  "duration": 170.7,
+  "title": "Baron Celine - RATATATA"
+ },
+ {
+  "event": "mus_custom_radio_when_its_war",
+  "station": "04",
+  "rest": "_radio_when_its_war",
+  "wem": 925140962,
+  "file": "04_hiphop_when_its_war.mp3",
+  "duration": 245.6,
+  "title": "Footage Missing - When It's War"
+ }
+]

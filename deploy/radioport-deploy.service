@@ -1,0 +1,10 @@
+[Unit]
+Description=Deploy radioport web code from GitHub (read-only)
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=oneshot
+ExecStart=/usr/local/sbin/radioport-deploy.sh
+Nice=10
+TimeoutStartSec=90

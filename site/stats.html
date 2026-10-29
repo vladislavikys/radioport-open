@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Radioport - statistics</title>
+<meta name="theme-color" content="#1a0507">
+<meta name="robots" content="noindex, nofollow">
+<link rel="icon" href="icons/icon-192.png">
+<style>
+  @font-face { font-family: "Blender"; src: url("fonts/blenderpro-book.ttf"); font-weight: 400; }
+  @font-face { font-family: "Blender"; src: url("fonts/blenderpro-bold.ttf"); font-weight: 700; }
+  @font-face { font-family: "Raj"; src: url("fonts/raj-medium.ttf"); font-weight: 500; }
+  :root {
+    color-scheme: dark;
+    --void: oklch(0.12 0.035 22); --room: oklch(0.2 0.075 24); --glow: oklch(0.3 0.12 24); --panel: oklch(0.2 0.06 278);
+    --red: oklch(0.66 0.2 22); --red-hi: oklch(0.74 0.19 24); --red-line: oklch(0.52 0.17 22); --red-dim: oklch(0.4 0.13 22);
+    --cyan: oklch(0.79 0.1 205); --cyan-hi: oklch(0.92 0.09 200); --cyan-dim: oklch(0.6 0.08 207); --cyan-fill: oklch(0.8 0.12 205 / 0.22);
+    --ink: oklch(0.9 0.03 255);
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: "Blender", system-ui, sans-serif; text-transform: uppercase; color: var(--cyan); min-height: 100vh;
+    background: radial-gradient(60% 55% at 50% 0%, var(--glow) 0%, transparent 70%), linear-gradient(180deg, var(--room), var(--void)) fixed; padding: max(18px, env(safe-area-inset-top)) 16px 48px; }
+  body::after { content: ""; position: fixed; inset: 0; pointer-events: none; background: repeating-linear-gradient(0deg, oklch(0 0 0 / 0.16) 0 1px, transparent 1px 3px); opacity: 0.5; }
+  main { max-width: 760px; margin: 0 auto; position: relative; z-index: 1; }
+  .tag { font: 500 9px/14px "Raj", sans-serif; letter-spacing: 0.04em; color: var(--red-line); text-transform: none; }
+  .head { display: flex; align-items: center; height: 40px; margin-top: 4px; border: 1px solid var(--red-line); background: linear-gradient(180deg, oklch(0.22 0.07 278), oklch(0.17 0.06 278));
+    clip-path: polygon(0 0, 100% 0, 100% calc(100% - 11px), calc(100% - 11px) 100%, 0 100%); }
+  .head i { align-self: stretch; width: 12px; margin: -1px 0 -1px -1px; background: linear-gradient(90deg, var(--red) 0 7px, var(--red-dim) 7px); }
+  .head h1 { font-size: 20px; font-weight: 400; color: var(--ink); margin-left: 14px; letter-spacing: 0.02em; }
+  .head button { margin-left: auto; margin-right: 14px; display: flex; align-items: center; gap: 8px; background: none; border: 0; cursor: pointer; font: inherit; color: var(--red); text-transform: inherit; font-weight: 700; font-size: 16px; }
+  .key { display: inline-grid; place-items: center; width: 26px; height: 26px; border: 2px solid var(--cyan); border-radius: 4px; color: var(--cyan-hi); font-weight: 700; font-size: 14px; background: oklch(0.3 0.06 205 / 0.18); }
+  .totals { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin-top: 22px; }
+  .card { border: 1px solid var(--red-line); background: oklch(0.15 0.045 24 / 0.7); padding: 14px 16px; position: relative; }
+  .card::before { content: ""; position: absolute; left: 0; top: 0; bottom: 0; width: 4px; background: var(--red-line); }
+  .card .lab { font: 500 10px "Raj", sans-serif; letter-spacing: 0.08em; color: var(--red-line); }
+  .card .val { font-weight: 700; font-size: 30px; color: var(--cyan-hi); margin-top: 6px; font-variant-numeric: tabular-nums; text-shadow: 0 0 14px oklch(0.8 0.12 205 / 0.35); }
+  .card .val small { font-size: 15px; color: var(--cyan-dim); margin-left: 2px; }
+  h2 { font-size: 15px; font-weight: 700; color: var(--red); letter-spacing: 0.04em; margin: 28px 0 10px; padding-bottom: 6px; border-bottom: 1px solid var(--red-dim); }
+  .row { display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr) 64px; align-items: center; gap: 12px; padding: 7px 0; font-size: 15px; }
+  .row .n { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  .row .n b { color: var(--cyan-hi); }
+  .row .n em { font-style: normal; color: var(--cyan-dim); margin-left: 8px; font-size: 12px; }
+  .row .t { text-align: right; color: var(--cyan-dim); font-variant-numeric: tabular-nums; font-size: 14px; }
+  .bar { height: 12px; background: oklch(0.2 0.04 24); position: relative; clip-path: polygon(0 0, 100% 0, calc(100% - 4px) 100%, 0 100%); }
+  .bar i { position: absolute; inset: 0 auto 0 0; background: linear-gradient(90deg, var(--cyan-dim), var(--cyan-hi)); box-shadow: 0 0 10px oklch(0.8 0.12 205 / 0.45); transform-origin: left; animation: grow 0.5s cubic-bezier(0.23, 1, 0.32, 1) both; }
+  .days { display: flex; align-items: flex-end; gap: 6px; height: 130px; margin-top: 8px; }
+  .day { flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: flex-end; height: 100%; min-width: 0; }
+  .day i { width: 100%; background: linear-gradient(0deg, var(--cyan-dim), var(--cyan-hi)); box-shadow: 0 0 8px oklch(0.8 0.12 205 / 0.4); min-height: 2px; transform-origin: bottom; animation: rise 0.5s cubic-bezier(0.23, 1, 0.32, 1) both; }
+  .day.today i { background: linear-gradient(0deg, var(--red-line), var(--red-hi)); box-shadow: 0 0 8px oklch(0.6 0.2 22 / 0.5); }
+  .day span { font: 500 9px "Raj", sans-serif; color: var(--cyan-dim); margin-top: 5px; }
+  .empty { padding: 36px 8px; text-align: center; color: var(--red-line); font-size: 15px; line-height: 1.6; }
+  .foot { margin-top: 26px; font: 500 10px "Raj", sans-serif; letter-spacing: 0.05em; color: var(--red-line); text-transform: none; }
+  @keyframes grow { from { transform: scaleX(0); } }
+  @keyframes rise { from { transform: scaleY(0); } }
+  @media (prefers-reduced-motion: reduce) { .bar i, .day i { animation: none; } }
+  @media (max-width: 560px) { .totals { grid-template-columns: 1fr; } .card .val { font-size: 26px; } .row { grid-template-columns: minmax(0, 1fr) 54px; } .row .bar { grid-column: 1 / -1; order: 3; } }
+</style>
+</head>
+<body>
+<main>
+  <div class="tag">TRN_TCLAS_800096</div>
+  <div class="head"><i></i><h1>RADIOPORT - STATISTICS</h1><button id="back" type="button"><span class="key">V</span>BACK</button></div>
+  <div id="root"></div>
+  <p class="foot">Counted from real playback on this device only: pauses, DJ lines, jingles and lost signal are not included.</p>
+</main>
+<script src="data/tracks.js?v=9"></script>
+<script>
+(() => {
+  const $ = (s) => document.querySelector(s);
+  const load = (k, d) => { try { const v = JSON.parse(localStorage.getItem(k)); return v == null ? d : v; } catch { return d; } };
+  const rowsRaw = load('cp-stats', {});
+  const info = new Map(), stName = new Map();
+  (window.STATIONS || []).forEach((s) => { stName.set(s.id, s); s.tracks.forEach((t) => info.set(t.f, t)); });
+
+  // key = device|day|file|station -> seconds
+  const rows = Object.entries(rowsRaw).map(([k, sec]) => { const [dev, day, f, sid] = k.split('|'); return { dev, day, f, sid, sec }; });
+  const fmt = (s) => { if (s < 60) return `${Math.round(s)}<small>S</small>`; const h = Math.floor(s / 3600), m = Math.round((s % 3600) / 60); return h ? `${h}<small>H</small> ${m}<small>M</small>` : `${m}<small>M</small>`; };
+  const fmtS = (s) => { if (s < 60) return `${Math.round(s)}s`; const h = Math.floor(s / 3600), m = Math.round((s % 3600) / 60); return h ? `${h}h ${m}m` : `${m}m`; };
+  const ymd = (d) => `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, '0')}-${String(d.getDate()).padStart(2, '0')}`;
+  const esc = (x) => String(x).replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
+
+  const root = $('#root');
+  if (!rows.length) {
+    root.innerHTML = '<p class="empty">NO LISTENING RECORDED YET.<br>LISTEN TO A STATION FOR A WHILE AND COME BACK.</p>';
+  } else {
+    const now = new Date(), today = ymd(now), week = new Set();
+    for (let i = 0; i < 7; i++) { const d = new Date(now); d.setDate(d.getDate() - i); week.add(ymd(d)); }
+    const sum = (fn) => rows.filter(fn).reduce((a, r) => a + r.sec, 0);
+    const byKey = (key) => { const m = new Map(); rows.forEach((r) => m.set(r[key], (m.get(r[key]) || 0) + r.sec)); return [...m.entries()].sort((a, b) => b[1] - a[1]); };
+
+    const songs = byKey('f').slice(0, 8), stations = byKey('sid'), maxSong = songs[0] ? songs[0][1] : 1, maxSt = stations[0] ? stations[0][1] : 1;
+    const days = []; for (let i = 13; i >= 0; i--) { const d = new Date(now); d.setDate(d.getDate() - i); days.push({ day: ymd(d), lab: d.getDate(), sec: sum((r) => r.day === ymd(d)) }); }
+    const maxDay = Math.max(1, ...days.map((d) => d.sec));
+
+    root.innerHTML =
+      `<div class="totals"><div class="card"><div class="lab">TODAY</div><div class="val">${fmt(sum((r) => r.day === today))}</div></div>` +
+      `<div class="card"><div class="lab">LAST 7 DAYS</div><div class="val">${fmt(sum((r) => week.has(r.day)))}</div></div>` +
+      `<div class="card"><div class="lab">ALL TIME</div><div class="val">${fmt(sum(() => true))}</div></div></div>` +
+      `<h2>LAST 14 DAYS</h2><div class="days">${days.map((d) => `<div class="day${d.day === today ? ' today' : ''}" title="${d.day}: ${fmtS(d.sec)}"><i style="height:${Math.max(2, d.sec / maxDay * 100)}%"></i><span>${d.lab}</span></div>`).join('')}</div>` +
+      `<h2>TOP SONGS</h2>${songs.map(([f, sec]) => { const t = info.get(f); const name = t ? `<b>${esc(t.t)}</b><em>${esc(t.a)}</em>` : esc(f); return `<div class="row"><span class="n">${name}</span><div class="bar"><i style="width:${sec / maxSong * 100}%"></i></div><span class="t">${fmtS(sec)}</span></div>`; }).join('')}` +
+      `<h2>STATIONS</h2>${stations.map(([sid, sec]) => { const s = stName.get(sid); const name = s ? `<b>${esc(s.name)}</b><em>${esc(s.freq || '')}</em>` : esc(sid); return `<div class="row"><span class="n">${name}</span><div class="bar"><i style="width:${sec / maxSt * 100}%"></i></div><span class="t">${fmtS(sec)}</span></div>`; }).join('')}`;
+  }
+
+  const back = () => { if (window.opener) window.close(); else location.href = 'index.html'; };
+  $('#back').addEventListener('click', back);
+  addEventListener('keydown', (e) => { if (['KeyV', 'Escape', 'KeyC'].includes(e.code) || ['v', 'м', 'Escape'].includes(e.key.toLowerCase())) { e.preventDefault(); back(); } });
+})();
+</script>
+</body>
+</html>

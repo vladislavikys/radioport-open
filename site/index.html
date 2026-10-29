@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Radioport</title>
+<meta name="color-scheme" content="dark">
+<meta name="theme-color" content="#1a0507">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Radioport">
+<meta name="robots" content="noindex, nofollow">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" href="icons/icon-192.png">
+<link rel="apple-touch-icon" href="icons/icon-192.png">
+<link rel="stylesheet" href="style.css?v=12">
+</head>
+<body>
+
+<div class="bg" aria-hidden="true">
+  <div class="bg-glow"></div>
+  <div class="bg-sign">CHOOH2</div>
+  <div class="bg-canopy"></div>
+  <div class="bg-fog"></div>
+  <div class="bg-grain"></div>
+  <div class="bg-scan"></div>
+  <div class="bg-vignette"></div>
+</div>
+
+<div class="fps" id="fps" aria-hidden="true"><b id="fps-n">60</b> FPS <span id="fps-ms">16.6ms</span></div>
+
+<!-- jack-in gate: browsers need a gesture before audio may start -->
+<button class="boot" id="boot" type="button">
+  <span class="boot-line">RADIOPORT // CITY-WIDE BROADCAST</span>
+  <span class="boot-cta"><span class="k-desk">PRESS ANY KEY</span><span class="k-touch">TAP</span> TO JACK IN<i>_</i></span>
+</button>
+
+<div class="scaler" id="scaler" hidden>
+  <main class="ui" id="ui" aria-label="Radioport">
+    <div class="tag">TRN_TCLAS_800095</div>
+
+    <header class="head">
+      <span class="head-tab"></span>
+      <h1>RADIOPORT</h1>
+    </header>
+
+    <section class="np">
+      <div class="art" id="art">
+        <span class="art-strip"></span>
+        <div class="art-dots"></div>
+        <canvas class="art-spec" id="art-spec" width="192" height="36" aria-hidden="true"></canvas>
+        <img id="art-img" alt="" draggable="false">
+        <pre class="art-meta" id="art-meta"></pre>
+      </div>
+
+      <div class="np-info">
+        <div class="np-label">NOW PLAYING</div>
+        <div class="np-title" id="np-title" aria-live="polite"></div>
+        <div class="vol">
+          <span class="vol-label">VOLUME</span>
+          <button class="key" id="vol-dn" type="button" aria-label="Volume down">A</button>
+          <span class="vol-val" id="vol-val">80%</span>
+          <button class="key" id="vol-up" type="button" aria-label="Volume up">D</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="list-wrap">
+      <ul class="list" id="list" role="listbox" aria-label="Stations"></ul>
+      <div class="sb"><i class="sb-thumb" id="sb-thumb"></i></div>
+
+      <!-- history screen: replaces the station list while open -->
+      <div class="hist" id="hist" hidden>
+        <div class="hist-head"><b>HISTORY</b><span id="hist-count"></span><em>LAST 60 SONGS</em></div>
+        <div class="hist-view"><ul class="hist-rows" id="hist-rows"></ul></div>
+        <div class="sb"><i class="sb-thumb" id="hist-thumb"></i></div>
+      </div>
+    </section>
+
+    <footer class="foot">
+      <div class="tools">
+        <button class="act tool" id="btn-hist" type="button"><span class="key">Y</span><b>HISTORY</b></button>
+        <button class="act tool" id="btn-sleep" type="button"><span class="key">T</span><b id="sleep-txt">SLEEP</b></button>
+        <button class="act tool" id="btn-dj" type="button"><span class="key">J</span><b id="dj-txt">DJ ON</b></button>
+        <button class="act tool" id="btn-scan" type="button"><span class="key">X</span><b id="scan-txt">SCAN</b></button>
+        <button class="act tool" id="btn-stats" type="button"><span class="key">V</span><b>STATS</b></button>
+      </div>
+      <div class="foot-row">
+        <p class="legal">ONLY SCAN-CERTIFIED AND CHAIN-5TH CLASS CIVILIANS ARE ALLOWED TO MANIPULATE, ACCESS OR DISABLE THIS DEVICE.</p>
+        <div class="btns">
+          <button class="act" id="btn-sel" type="button"><span class="key">F</span><b>SELECT</b></button>
+          <button class="act" id="btn-close" type="button"><span class="key">C</span><b>CLOSE</b></button>
+        </div>
+      </div>
+    </footer>
+  </main>
+</div>
+
+<!-- shown while the panel is closed -->
+<button class="mini" id="mini" type="button" hidden>
+  <img id="mini-img" alt="">
+  <span class="mini-txt"><i>NOW PLAYING</i><b id="mini-title"></b></span>
+  <span class="key">C</span>
+</button>
+
+<!-- track popup (only when the panel is closed) -->
+<div class="toast" id="toast" aria-hidden="true">
+  <img id="toast-img" alt="">
+  <span class="toast-txt"><i>NOW PLAYING</i><b id="toast-title"></b></span>
+</div>
+
+<!-- two decks: the next song starts on the idle one so songs can crossfade -->
+<audio id="au" preload="auto"></audio>
+<audio id="au2" preload="auto"></audio>
+<script src="data/tracks.js?v=9"></script>
+<script src="data/dj.js?v=7"></script>
+<script src="fx.js?v=7"></script>
+<script src="app.js?v=18"></script>
+</body>
+</html>

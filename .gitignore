@@ -1,0 +1,21 @@
+# Game-derived and third-party material: never commit it. Rebuild it with pipeline/ from your own copy of the game.
+site/audio/
+site/dj/
+site/sfx/
+site/img/
+site/fonts/
+site/icons/
+site/data/
+
+# Working files and downloaded tools
+work/
+tools/
+preview/
+_assets_test/
+__pycache__/
+*.pyc
+*.wem
+*.bnk
+*.opuspak
+*.archive
+*.log
