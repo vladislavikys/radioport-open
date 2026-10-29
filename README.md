@@ -23,6 +23,8 @@ crossfade, DJ voice lines, sleep timer, stats, and support for phones and gamepa
 > Keep the built site private: the music belongs to its artists and CD PROJEKT RED.
 >
 > Unofficial fan project, not affiliated with or endorsed by CD PROJEKT RED. *Cyberpunk 2077* is a trademark of CD PROJEKT S.A.
+> Free and non-commercial, made in line with the [CD PROJEKT RED Fan Content Guidelines](https://cdprojektred.com/fan-content/).
+> **If a rights holder asks, the project will be changed or removed.**
 
 ## Features
 
@@ -151,3 +153,8 @@ The service worker caches only the app shell; music is never cached.
 ## License
 
 Code: [MIT](LICENSE). The license does not cover game material. Unofficial project, not affiliated with CD PROJEKT RED.
+
+This is a free, non-commercial fan project that follows the [CD PROJEKT RED Fan Content Guidelines](https://cdprojektred.com/fan-content/).
+Some of the radio music in the game is licensed from third-party artists; it belongs to them and is never distributed here.
+If CD PROJEKT RED or another rights holder asks for a change or removal, it will be done promptly:
+please [open an issue](https://github.com/vladislavikys/radioport-open/issues) or contact the repository owner on GitHub.
