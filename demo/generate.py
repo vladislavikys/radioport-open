@@ -1,4 +1,4 @@
-"""Makes the demo assets in demo/assets: three synthesized songs, station logos, app icons and data files.
+"""Makes the demo assets in demo/assets: six synthesized songs, station logos, app icons and data files.
 
 Nothing here comes from the game. The songs are generated note by note below, the logos are
 SVG drawings rendered to PNG. Needs ffmpeg (mp3 encoding) and Chrome or Edge (SVG to PNG).
@@ -110,7 +110,7 @@ def bell(freq, length):
     return out
 
 
-# the three demo songs
+# the demo songs
 
 def neon_drift():
     """Synthwave, 100 BPM, A minor: arpeggio, saw bass, wide pad, gated snare."""
@@ -204,10 +204,121 @@ def low_orbit():
     return m
 
 
+def keys(freq, length):
+    """Soft electric piano: sine with a little second harmonic and a slow decay."""
+    out = []
+    for i in range(int(length * SR)):
+        t = i / SR
+        v = math.sin(2 * math.pi * freq * t) + 0.25 * math.sin(4 * math.pi * freq * t) * math.exp(-6 * t)
+        out.append(v * math.exp(-1.4 * t) * min(1.0, t / 0.01))
+    return out
+
+
+def drive(buf, amount):
+    return [math.tanh(v * amount) for v in buf]
+
+
+def chrome_rain():
+    """Lo-fi beat, 84 BPM, F minor 9: swung drums, electric piano, vinyl crackle."""
+    rng = random.Random(4)
+    bpm, bars = 84, 21
+    beat = 60 / bpm
+    m = Mix(bars * 4 * beat + 2)
+    chords = [[53, 56, 60, 63, 67], [49, 53, 56, 60, 63], [51, 55, 58, 62], [48, 52, 55, 58, 62]]   # Fm9 Dbmaj9 Eb6 C7
+    k, s = kick(0.5), snare(rng)
+    hat = noise_hit(0.04, 90, rng)
+    swing = 0.08 * beat
+    crackle = [0.0] * int((bars * 4 * beat + 2) * SR)
+    for _ in range(int(len(crackle) / SR * 9)):
+        i = rng.randrange(len(crackle) - 200)
+        amp = rng.uniform(0.2, 1.0)
+        for k2 in range(60):
+            crackle[i + k2] += amp * rng.uniform(-1, 1) * math.exp(-k2 / 12)
+    m.add(0, crackle, 0.035)
+    for bar in range(bars):
+        t0 = bar * 4 * beat
+        ch = chords[bar % 4]
+        for j, n in enumerate(ch):
+            m.add(t0 + j * 0.012, keys(hz(n), 4 * beat), 0.07, pan=-0.4 + 0.2 * j)
+        m.add(t0, synth(hz(ch[0] - 24), 2.5 * beat, "square", cutoff=220, attack=0.02, decay=0.6), 0.35)
+        m.add(t0 + 2.75 * beat, synth(hz(ch[0] - 24 + 7), 1.2 * beat, "square", cutoff=220, decay=1.0), 0.3)
+        if bar >= 1:
+            m.add(t0, k, 0.8)
+            m.add(t0 + 1.75 * beat, k, 0.55)
+            m.add(t0 + 2.5 * beat, k, 0.6)
+            m.add(t0 + beat, s, 0.32)
+            m.add(t0 + 3 * beat, s, 0.32)
+            for e in range(8):
+                m.add(t0 + e * beat / 2 + (swing if e % 2 else 0), hat, 0.06 if e % 2 else 0.09, pan=0.35)
+    return m
+
+
+def redline():
+    """Drum and bass, 172 BPM: two-step break, detuned reese bass, airy pad."""
+    rng = random.Random(5)
+    bpm, bars = 172, 44
+    beat = 60 / bpm
+    m = Mix(bars * 4 * beat + 2)
+    k, s = kick(1.1), snare(rng)
+    hat = noise_hit(0.04, 85, rng)
+    roots = [38, 38, 41, 36]                        # D D F C
+    for bar in range(bars):
+        t0 = bar * 4 * beat
+        root = roots[(bar // 4) % 4]
+        if bar % 4 == 0:
+            for j, n in enumerate((root + 24, root + 27, root + 31)):
+                m.add(t0, synth(hz(n), 16 * beat, cutoff=1100, attack=1.2, decay=0.08, detune=12), 0.07, pan=-0.5 + 0.5 * j)
+        if bar % 2 == 0:
+            m.add(t0, drive(synth(hz(root), 8 * beat, cutoff=380, attack=0.03, decay=0.12, detune=22), 2.5), 0.32)
+        if bar >= 4:
+            m.add(t0, k, 0.9)
+            m.add(t0 + 2.5 * beat, k, 0.75)
+            m.add(t0 + beat, s, 0.55)
+            m.add(t0 + 3 * beat, s, 0.55)
+            if bar % 2:
+                m.add(t0 + 3.75 * beat, s, 0.22)
+            for e in range(8):
+                m.add(t0 + e * beat / 2, hat, 0.07 + 0.04 * (e % 2), pan=0.3)
+    return m
+
+
+def black_ice():
+    """Darksynth, 110 BPM, E minor: distorted bass, hard kick and snare, minor lead."""
+    rng = random.Random(6)
+    bpm, bars = 110, 28
+    beat = 60 / bpm
+    m = Mix(bars * 4 * beat + 2)
+    k, s = kick(1.3), snare(rng)
+    lead = [64, 67, 71, 69, 67, 66, 64, 62]
+    roots = [28, 28, 24, 26]                        # E E C D
+    for bar in range(bars):
+        t0 = bar * 4 * beat
+        root = roots[(bar // 2) % 4]
+        for e in range(8):
+            if e in (3, 7) and bar % 2:
+                continue
+            m.add(t0 + e * beat / 2, drive(synth(hz(root + (12 if e == 6 else 0)), beat / 2 * 0.85, cutoff=700, decay=4), 4), 0.24)
+        if bar >= 2:
+            for b in range(4):
+                m.add(t0 + b * beat, k, 1.0)
+            m.add(t0 + beat, s, 0.6)
+            m.add(t0 + 3 * beat, s, 0.6)
+        if bar >= 8:
+            for e in range(4):
+                n = lead[(bar * 4 + e) % len(lead)] + (12 if bar >= 20 else 0)
+                m.add(t0 + e * beat, synth(hz(n), beat * 0.95, cutoff=2400, decay=1.2, detune=8), 0.10, pan=0.3)
+        if bar >= 16 and bar % 4 == 0:
+            m.add(t0, synth(hz(root + 36), 16 * beat, cutoff=900, attack=2.0, decay=0.05, detune=16), 0.08, pan=-0.4)
+    return m
+
+
 SONGS = [
+    ("chrome_rain", "CHROME RAIN", "87.6", "chrome_rain", "Puddle Neon", chrome_rain),
     ("neon_fm", "NEON FM", "90.1", "neon_drift", "Neon Drift", neon_drift),
     ("static_pulse", "STATIC PULSE", "94.7", "static_pulse", "Grid Lock", static_pulse),
+    ("redline", "REDLINE", "98.2", "redline", "Overclock", redline),
     ("low_orbit", "LOW ORBIT", "101.3", "low_orbit", "Satellite Hum", low_orbit),
+    ("black_ice", "BLACK ICE", "105.9", "black_ice", "Firewall", black_ice),
 ]
 
 
@@ -230,6 +341,13 @@ LOGOS = {
                         + label(150, 200, "STATIC PULSE", 30)),
     "low_orbit": svg(300, 220, '<circle cx="150" cy="95" r="34"/><ellipse cx="150" cy="95" rx="110" ry="34" transform="rotate(-18 150 95)"/>'
                      '<circle cx="250" cy="70" r="7" fill="#5ef2ff"/>' + label(150, 200, "LOW ORBIT")),
+    "chrome_rain": svg(300, 220, '<path d="M70 95 A40 40 0 0 1 150 60 A45 45 0 0 1 235 95 Z"/>'
+                       '<line x1="95" y1="118" x2="85" y2="148"/><line x1="140" y1="118" x2="130" y2="148"/><line x1="185" y1="118" x2="175" y2="148"/>'
+                       + label(150, 200, "CHROME RAIN", 30)),
+    "redline": svg(300, 220, '<path d="M60 150 A90 90 0 0 1 240 150"/><line x1="150" y1="150" x2="215" y2="85"/>'
+                   '<circle cx="150" cy="150" r="9" fill="#5ef2ff"/>' + label(150, 200, "REDLINE")),
+    "black_ice": svg(300, 220, '<path d="M150 25 L210 95 L150 165 L90 95 Z"/><path d="M90 95 H210 M150 25 L130 95 L150 165 L170 95 Z"/>'
+                     + label(150, 205, "BLACK ICE")),
     "no_station": svg(220, 220, '<circle cx="110" cy="110" r="70"/><line x1="61" y1="159" x2="159" y2="61"/>'),
     "favorites": svg(260, 220, '<path d="M130 185 L50 105 A42 42 0 0 1 130 55 A42 42 0 0 1 210 105 Z"/>'),
 }

@@ -12,6 +12,22 @@ HERE = os.path.dirname(os.path.abspath(__file__))
 SITE = os.path.join(os.path.dirname(HERE), "site")
 ASSETS = os.path.join(HERE, "assets")
 CODE = (".html", ".js", ".css", ".webmanifest")
+DEMO_URL = "https://vladislavikys.github.io/radioport-open/"
+REPO_URL = "https://github.com/vladislavikys/radioport-open"
+TITLE = "Radioport: a Night City radio player in the browser"
+DESCRIPTION = ("Fan-made web player inspired by the Cyberpunk 2077 radio: live-schedule stations, crossfade, "
+               "phone and gamepad support. This demo plays synthesized tracks; the full version is built from your own copy of the game.")
+
+META = f"""<meta name="description" content="{DESCRIPTION}">
+<meta property="og:type" content="website">
+<meta property="og:title" content="{TITLE}">
+<meta property="og:description" content="{DESCRIPTION}">
+<meta property="og:url" content="{DEMO_URL}">
+<meta property="og:image" content="{DEMO_URL}og.png">
+<meta property="og:image:width" content="1280">
+<meta property="og:image:height" content="640">
+<meta name="twitter:card" content="summary_large_image">
+"""
 
 
 def patch(path, pairs):
@@ -33,6 +49,7 @@ def main():
         if f.endswith(CODE) or f == "serve.py":
             shutil.copy2(os.path.join(SITE, f), out)
     shutil.copytree(ASSETS, out, dirs_exist_ok=True)
+    shutil.copy2(os.path.join(HERE, "demo.css"), out)
     os.makedirs(os.path.join(out, "fonts"), exist_ok=True)
 
     # one free font family stands in for both game fonts
@@ -48,6 +65,10 @@ def main():
     patch(os.path.join(out, "index.html"), [
         (r"<title>Radioport</title>", "<title>Radioport demo</title>"),
         (r"RADIOPORT // CITY-WIDE BROADCAST", "RADIOPORT // DEMO BROADCAST: SYNTH TRACKS, NO GAME FILES"),
+        # the private build stays out of search engines, the demo is meant to be found and shared
+        (r'<meta name="robots" content="noindex, nofollow">\n', META),
+        (r"</head>", '<link rel="stylesheet" href="demo.css">\n</head>'),
+        (r"</body>",f'<a class="demo-gh" href="{REPO_URL}" target="_blank" rel="noopener">SOURCE ON GITHUB ↗</a>\n</body>'),
     ])
     print("demo site:", out)
 

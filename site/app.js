@@ -58,7 +58,7 @@
     id: 'favorites', name: 'MY FAVORITES', freq: '', logo: 'favorites', blips: [], ver: 0,
     get tracks() { return FAVORITES.map((f) => TRK.get(f)).filter(Boolean); },
   };
-  S.splice(1, 0, favStation);              // right under NO STATION
+  if (favStation.tracks.length) S.splice(1, 0, favStation);   // right under NO STATION
 
   // layout: pick desktop / phone-portrait / phone-landscape, then scale the stage to the viewport
   const PANEL_W = { desk: 586, port: 400, land: 780 };
@@ -275,6 +275,8 @@
     if (v === 'history') { st.hh = 0; st.hscroll = 0; renderHist(); }
   }
 
+  const hasDj = DJ.ash.length > 0 || Object.keys(DJ.songs).length > 0;
+  el.btnDj.hidden = !hasDj;                // no DJ clips were built: nothing to switch
   function paintDj() {
     el.btnDj.classList.toggle('on', st.dj);
     el.djTxt.textContent = st.dj ? 'DJ ON' : 'DJ OFF';
@@ -565,7 +567,7 @@
     else if (k === 'f' || k === 'enter' || k === ' ') select();
     else if (k === 'y') { setView(st.view === 'history' ? 'stations' : 'history'); FX.confirm(); }
     else if (k === 't') cycleSleep();
-    else if (k === 'j') toggleDj();
+    else if (k === 'j' && hasDj) toggleDj();
     else if (k === 'pagedown') move(st.view === 'history' ? HROWS : ROWS); else if (k === 'pageup') move(-(st.view === 'history' ? HROWS : ROWS));
     else return false;
     return true;
@@ -701,7 +703,7 @@
     if (typeof saved.vol === 'number') st.vol = saved.vol;
     const si = S.findIndex((s) => s.id === saved.station);
     const def = S.findIndex((s) => s.id === 'dark_star');
-    st.hi = si > 1 || (si === 1 && favStation.tracks.length) ? si : def >= 0 ? def : S.findIndex((s) => s.tracks.length);
+    st.hi = si > 0 && S[si].tracks.length ? si : def >= 0 ? def : S.findIndex((s) => s.tracks.length);
     paintVol(false); paintList(); paintArt(false); paintSleep(); paintDj(); paintScan(); paintOnAir();
     setOpen(true);
     tune(st.hi);

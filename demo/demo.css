@@ -1,0 +1,10 @@
+/* Demo build only: readable demo notice on the boot screen and a link back to the repository. */
+.boot-line { font-size: 15px; letter-spacing: 0.2em; color: var(--red); max-width: 90vw; line-height: 1.5; }
+
+.demo-gh {
+  position: fixed; z-index: 30;
+  top: max(16px, env(safe-area-inset-top)); left: max(18px, env(safe-area-inset-left));
+  font: 700 12px/1 "Raj", system-ui, sans-serif; letter-spacing: 0.18em; white-space: nowrap;
+  color: var(--cyan-dim); text-decoration: none; padding: 6px 10px;
+}
+.demo-gh:hover, .demo-gh:focus-visible { color: var(--cyan-hi); }
