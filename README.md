@@ -1,5 +1,11 @@
 # Radioport
 
+<p align="center">
+  <img src="docs/img/demo.gif" alt="Radioport: switching stations" width="340">
+  &nbsp;
+  <img src="docs/img/mobile.png" alt="Radioport on a phone" width="170">
+</p>
+
 > **EN:** An unofficial, fan-made web player that recreates the RADIOPORT screen from *Cyberpunk 2077*
 > (14 stations, live-schedule playback, DJ voice lines, stats, phone and gamepad support).
 > This repository contains **code and extraction scripts only**. No game music, voices, logos or fonts are included
